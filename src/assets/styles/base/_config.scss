@@ -1,0 +1,242 @@
+/* @docs
+label: Configuration Variables
+
+note: |
+  These variables are globally accessible.
+
+category: file
+*/
+
+/* @docs
+label: Colors for Light Mode
+
+note: |
+  Define colors in the format `h s l`
+  so the variables can be used in `hsl()`
+  with custom alpha values.
+
+category: global
+*/
+:root {
+  --light-1: 0 0% 98%;
+  --light-2: 0 0% 95%;
+  --light-3: 0 0% 93%;
+  --light-4: 0 0% 90%;
+  --light-5: 0 0% 80%;
+
+  --dark-1: 0 0% 7%;
+  --dark-2: 0 0% 20%;
+  --dark-3: 0 0% 33%;
+  --dark-4: 0 0% 47%;
+  --dark-5: 0 0% 60%;
+
+  --l-rose-1: 343 70% 95%;
+  --l-rose-2: 343 100% 78%;
+  --l-rose-3: 343 100% 68%;
+  --l-rose-4: 343 60% 48%;
+  --l-rose-5: 343 60% 20%;
+
+  --l-gold-1: 48 94% 84%;
+  --l-gold-2: 48 94% 74%;
+  --l-gold-3: 48 94% 54%;
+  --l-gold-4: 38 100% 44%;
+  --l-gold-5: 38 100% 15%;
+
+  --l-warning-1: 23 90% 85%;
+  --l-warning-2: 23 90% 75%;
+  --l-warning-3: 23 90% 55%;
+  --l-warning-4: 23 100% 35%;
+  --l-warning-5: 23 100% 15%;
+
+  --l-danger-1: 359 100% 92%;
+  --l-danger-2: 359 100% 82%;
+  --l-danger-3: 359 76% 52%;
+  --l-danger-4: 359 76% 32%;
+  --l-danger-5: 359 76% 15%;
+
+  --l-success-1: 94 45% 88%;
+  --l-success-2: 94 45% 70%;
+  --l-success-3: 94 45% 48%;
+  --l-success-4: 94 45% 28%;
+  --l-success-5: 94 45% 15%;
+
+  --l-info-1: 204 100% 85%;
+  --l-info-2: 204 100% 60%;
+  --l-info-3: 204 95% 41%;
+  --l-info-4: 204 100% 25%;
+  --l-info-5: 204 100% 13%;
+}
+
+/* @docs
+label: Colors for Dark Mode
+
+note: |
+  Define colors in the format `h s l`
+  so the variables can be used in `hsl()`
+  with custom alpha values.
+
+category: global
+*/
+:root {
+  --d-rose-5: 343 70% 95%;
+  --d-rose-4: 343 100% 78%;
+  --d-rose-3: 343 100% 68%;
+  --d-rose-2: 343 60% 48%;
+  --d-rose-1: 343 60% 20%;
+
+  --d-gold-5: 48 94% 84%;
+  --d-gold-4: 48 94% 74%;
+  --d-gold-3: 48 94% 54%;
+  --d-gold-2: 38 100% 44%;
+  --d-gold-1: 38 100% 15%;
+
+  --d-warning-5: 23 90% 85%;
+  --d-warning-4: 23 90% 75%;
+  --d-warning-3: 23 90% 55%;
+  --d-warning-2: 23 100% 35%;
+  --d-warning-1: 23 100% 15%;
+
+  --d-danger-5: 359 100% 92%;
+  --d-danger-4: 359 100% 82%;
+  --d-danger-3: 359 76% 52%;
+  --d-danger-2: 359 76% 32%;
+  --d-danger-1: 359 76% 15%;
+
+  --d-success-5: 94 45% 88%;
+  --d-success-4: 94 45% 70%;
+  --d-success-3: 94 45% 48%;
+  --d-success-2: 94 45% 28%;
+  --d-success-1: 94 45% 15%;
+
+  --d-info-5: 204 100% 85%;
+  --d-info-4: 204 100% 60%;
+  --d-info-3: 204 95% 41%;
+  --d-info-2: 204 100% 25%;
+  --d-info-1: 204 100% 13%;
+}
+
+/* @docs
+label: Font Stacks
+
+note: |
+  Format is `--font-{font type}`, where `font type` can be serif, sans-serif, mono, monospace, or code.
+
+category: global
+*/
+:root {
+  --font-sans : Inter, Arial, Helvetica, system-ui, sans-serif;
+  --font-serif: Fraunces, Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+  --font-mono : 'Cascadia Code', Consolas, Monaco, ui-monospace, monospace;
+}
+
+/* @docs
+label: Spaces
+
+note: |
+  Format is `--space-{size}`, where `size` can be `l`, `s`, and up to three `x` (extra) sizes (e.g. `xl`, `xxs`, `xxxl`).
+
+category: global
+*/
+:root {
+  $space : 1rem;
+  --space: #{$space};
+
+  --space-xxxl: #{$space * 2};
+  --space-xxl : #{$space * 1.75};
+  --space-xl  : #{$space * 1.5};
+  --space-l   : #{$space * 1.25};
+  --space-s   : #{$space * 0.75};
+  --space-xs  : #{$space * 0.5};
+  --space-xxs : #{$space * 0.25};
+  --space-xxxs: #{$space * 0.1};
+}
+
+/* @docs
+label: Font Sizes
+
+note: |
+  Format is `--fs-{size}`, where `size` can be 1 through 9, where `--fs-7` is the regular body copy size.
+  Relative font sizes (sizes that use `em` instead of `rem`) follows the format `--fsr-{size}`.
+
+category: global
+*/
+$scale : 1.306;
+
+:root {
+  $font-size: 1rem;
+
+  --fs-1 : #{$font-size * ($scale * 6)};
+  --fs-2 : #{$font-size * ($scale * 5)};
+  --fs-3 : #{$font-size * ($scale * 4)};
+  --fs-4 : #{$font-size * ($scale * 3)};
+  --fs-5 : #{$font-size * ($scale * 2)};
+  --fs-6 : #{$font-size * ($scale)};
+  --fs-7 : #{$font-size};
+  --fs-8 : #{$font-size * ($scale * 0.75)};
+  --fs-9 : #{$font-size * ($scale * 0.5)};
+
+  $font-size: 1em;
+  --fsr-1   : #{$font-size * ($scale * 6)};
+  --fsr-2   : #{$font-size * ($scale * 5)};
+  --fsr-3   : #{$font-size * ($scale * 4)};
+  --fsr-4   : #{$font-size * ($scale * 3)};
+  --fsr-5   : #{$font-size * ($scale * 2)};
+  --fsr-6   : #{$font-size * ($scale)};
+  --fsr-7   : #{$font-size};
+  --fsr-8   : #{$font-size * ($scale * 0.75)};
+  --fsr-9   : #{$font-size * ($scale * 0.5)};
+}
+
+/* @docs
+label: Responsive Font Sizes
+
+note: |
+  Responsive font sizes adjust based on the viewport width.
+  Format is `--fsv-{size}`, where `size` can be 1 through 9, where `--fsv-7` is the regular body copy size.
+
+category: global
+*/
+:root {
+  $font-size  : 1rem;
+  $scale-ceil : $scale;
+  $scale-floor: 0.5;
+  $vw         : 10vw;
+
+  --fsv-1 : clamp(#{$font-size * ($scale-floor * 6.6)}, #{$vw}, #{$font-size * ($scale-ceil * 6)});
+  --fsv-2 : clamp(#{$font-size * ($scale-floor * 5.5)}, #{$vw}, #{$font-size * ($scale-ceil * 5)});
+  --fsv-3 : clamp(#{$font-size * ($scale-floor * 4.4)}, #{$vw}, #{$font-size * ($scale-ceil * 4)});
+  --fsv-4 : clamp(#{$font-size * ($scale-floor * 3.3)}, #{$vw}, #{$font-size * ($scale-ceil * 3)});
+  --fsv-5 : clamp(#{$font-size * ($scale-floor * 2.2)}, #{$vw}, #{$font-size * ($scale-ceil * 2)});
+  --fsv-6 : clamp(#{$font-size * ($scale-floor * 1.1)}, #{$vw}, #{$font-size * ($scale-ceil)});
+  --fsv-7 : #{$font-size};
+}
+
+/* @docs
+label: Corner radii
+
+note: |
+  Format is `--radius-{size}`, where `size` can be 1 to 5.
+
+category: global
+*/
+:root {
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 8px;
+  --radius-4: 16px;
+  --radius-5: 32px;
+}
+
+/* @docs
+label: Widths
+
+note: |
+  Format is `--w-{size}`, where `size` is one of the following:
+    `page`, `content`
+
+category: global
+*/
+:root {
+  --w-content: 75ch;
+  --w-page   : 150ch;
+}

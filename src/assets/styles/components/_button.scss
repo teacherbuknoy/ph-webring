@@ -1,0 +1,79 @@
+@import "../base/mixins";
+
+.button {
+  background-color: transparent;
+  border          : none;
+  border-radius   : var(--radius-3);
+  color           : hsl(var(--rose-4));
+  cursor          : pointer;
+  display         : inline-flex;
+  font-family     : var(--font-sans);
+  font-size       : inherit;
+  font-weight     : 650;
+  padding         : var(--space-s) var(--space-xl);
+  text-decoration : none;
+  line-height     : 1.15;
+  transition      : background 200ms, box-shadow 200ms, text-shadow 200ms, scale 50ms;
+
+  &:active {
+    scale: 0.9;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible,
+  &:hover {
+    background-color: hsl(var(--rose-1));
+  }
+
+  &:focus-visible {
+    @include focus-visible;
+  }
+
+  &.secondary {
+    background-color: hsl(var(--rose-1));
+
+    &:focus-visible,
+    &:hover {
+      background-color: hsl(var(--rose-3));
+      color           : hsl(var(--light-1));
+      text-shadow     : 0 1px 1px hsl(var(--rose-4));
+    }
+  }
+
+  &.primary {
+    --shadow-color  : hsl(var(--l-rose-4) / 15%);
+    background-color: hsl(var(--rose-3));
+    color           : hsl(var(--light-1));
+    text-shadow     : 0 1px 1px hsl(var(--rose-4));
+    box-shadow      :
+      0 4px 16px var(--shadow-color),
+      0 3px 8px var(--shadow-color),
+      0 2px 4px var(--shadow-color),
+      0 2px 0 hsl(var(--light-1) / 15%) inset,
+      0 0 1px hsl(var(--light-1) / 25%) inset;
+
+    &:focus-visible,
+    &:hover {
+      --shadow-color: hsl(var(--l-rose-4) / 25%);
+      box-shadow    :
+        0 8px 16px var(--shadow-color),
+        0 4px 8px var(--shadow-color),
+        0 2px 4px var(--shadow-color),
+        0 2px 0 hsl(var(--light-1) / 15%) inset,
+        0 0 1px hsl(var(--light-1) / 25%) inset;
+    }
+
+    &:focus-visible {
+      outline-color: hsl(var(--rose-4));
+    }
+
+    &:active {
+      box-shadow:
+        0 2px 0 hsl(var(--light-1) / 15%) inset,
+        0 0 1px hsl(var(--light-1) / 25%) inset;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@mixin light-theme {
+  --bg-1: var(--light-1);
+  --bg-2: var(--light-2);
+  --bg-3: var(--light-3);
+  --bg-4: var(--light-4);
+  --bg-5: var(--light-5);
+
+  --bg-invert-1: var(--dark-1);
+  --bg-invert-2: var(--dark-2);
+  --bg-invert-3: var(--dark-3);
+  --bg-invert-4: var(--dark-4);
+  --bg-invert-5: var(--dark-5);
+
+  --fg-1: var(--dark-1);
+  --fg-2: var(--dark-2);
+  --fg-3: var(--dark-3);
+  --fg-4: var(--dark-4);
+  --fg-5: var(--dark-5);
+
+  --rose-1: var(--l-rose-1);
+  --rose-2: var(--l-rose-2);
+  --rose-3: var(--l-rose-3);
+  --rose-4: var(--l-rose-4);
+  --rose-5: var(--l-rose-5);
+
+  --gold-1: var(--l-gold-1);
+  --gold-2: var(--l-gold-2);
+  --gold-3: var(--l-gold-3);
+  --gold-4: var(--l-gold-4);
+  --gold-5: var(--l-gold-5);
+
+  --warning-1: var(--l-warning-1);
+  --warning-2: var(--l-warning-2);
+  --warning-3: var(--l-warning-3);
+  --warning-4: var(--l-warning-4);
+  --warning-5: var(--l-warning-5);
+
+  --danger-1: var(--l-danger-1);
+  --danger-2: var(--l-danger-2);
+  --danger-3: var(--l-danger-3);
+  --danger-4: var(--l-danger-4);
+  --danger-5: var(--l-danger-5);
+
+  --success-1: var(--l-success-1);
+  --success-2: var(--l-success-2);
+  --success-3: var(--l-success-3);
+  --success-4: var(--l-success-4);
+  --success-5: var(--l-success-5);
+
+  --info-1: var(--l-info-1);
+  --info-2: var(--l-info-2);
+  --info-3: var(--l-info-3);
+  --info-4: var(--l-info-4);
+  --info-5: var(--l-info-5);
+}
+
+@mixin dark-theme {
+  --bg-1: var(--dark-1);
+  --bg-2: var(--dark-2);
+  --bg-3: var(--dark-3);
+  --bg-4: var(--dark-4);
+  --bg-5: var(--dark-5);
+
+  --bg-invert-1: var(--light-1);
+  --bg-invert-2: var(--light-2);
+  --bg-invert-3: var(--light-3);
+  --bg-invert-4: var(--light-4);
+  --bg-invert-5: var(--light-5);
+
+  --fg-1: var(--light-1);
+  --fg-2: var(--light-2);
+  --fg-3: var(--light-3);
+  --fg-4: var(--light-4);
+  --fg-5: var(--light-5);
+
+  --rose-1: var(--d-rose-1);
+  --rose-2: var(--d-rose-2);
+  --rose-3: var(--d-rose-3);
+  --rose-4: var(--d-rose-4);
+  --rose-5: var(--d-rose-5);
+
+  --gold-1: var(--d-gold-1);
+  --gold-2: var(--d-gold-2);
+  --gold-3: var(--d-gold-3);
+  --gold-4: var(--d-gold-4);
+  --gold-5: var(--d-gold-5);
+
+  --warning-1: var(--d-warning-1);
+  --warning-2: var(--d-warning-2);
+  --warning-3: var(--d-warning-3);
+  --warning-4: var(--d-warning-4);
+  --warning-5: var(--d-warning-5);
+
+  --danger-1: var(--d-danger-1);
+  --danger-2: var(--d-danger-2);
+  --danger-3: var(--d-danger-3);
+  --danger-4: var(--d-danger-4);
+  --danger-5: var(--d-danger-5);
+
+  --success-1: var(--d-success-1);
+  --success-2: var(--d-success-2);
+  --success-3: var(--d-success-3);
+  --success-4: var(--d-success-4);
+  --success-5: var(--d-success-5);
+
+  --info-1: var(--d-info-1);
+  --info-2: var(--d-info-2);
+  --info-3: var(--d-info-3);
+  --info-4: var(--d-info-4);
+  --info-5: var(--d-info-5);
+}
+
+@mixin focus-visible($color: hsl(var(--rose-2))) {
+  outline: 3px solid $color;
+}

@@ -1,0 +1,58 @@
+@import "./mixins";
+
+.theme-light {
+  @include light-theme;
+}
+
+.theme-dark {
+  @include dark-theme;
+}
+
+:root:not(.theme-light):not(.theme-dark) {
+  @include light-theme;
+
+  @media (prefers-color-scheme: dark) {
+    @include dark-theme;
+    color-scheme: dark;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: hsl(var(--bg-2));
+  color: hsl(var(--fg-2));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin     : 0;
+  line-height: 1;
+}
+
+h1 {
+  font-size: var(--fsv-1)
+}
+
+h2 {
+  font-size: var(--fsv-2)
+}
+
+h3 {
+  font-size: var(--fsv-3)
+}
+
+h4 {
+  font-size: var(--fsv-4)
+}
+
+h5 {
+  font-size: var(--fsv-5)
+}
+
+h6 {
+  font-size: var(--fsv-6)
+}

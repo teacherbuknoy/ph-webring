@@ -1,3 +1,11 @@
+/* 
+  CSS Remedy
+  SOURCE: https: //github.com/jensimmons/cssremedy
+  This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,
+You can obtain one at http://mozilla.org/MPL/2.0/.
+*/
+
 /* @docs
 label: Core Remedies
 version: 0.1.0-beta.2
@@ -74,18 +82,23 @@ category: typography
 h1 {
   font-size: 2rem;
 }
+
 h2 {
   font-size: 1.5rem;
 }
+
 h3 {
   font-size: 1.17rem;
 }
+
 h4 {
   font-size: 1rem;
 }
+
 h5 {
   font-size: 0.83rem;
 }
+
 h6 {
   font-size: 0.67rem;
 }
@@ -127,9 +140,9 @@ category: typography
 hr {
   border-style: solid;
   border-width: 1px 0 0;
-  color: inherit;
-  height: 0;
-  overflow: visible;
+  color       : inherit;
+  height      : 0;
+  overflow    : visible;
 }
 
 /* @docs
@@ -151,10 +164,11 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
+  display       : block;
   vertical-align: middle;
-  max-width: 100%;
+  max-width     : 100%;
 }
+
 audio:not([controls]) {
   display: none;
 }
@@ -175,6 +189,7 @@ category: embedded elements
 picture {
   display: contents;
 }
+
 source {
   display: none;
 }
@@ -272,7 +287,7 @@ category: legacy browsers
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
-  padding: 0;
+  padding   : 0;
 }
 
 /* @docs
@@ -303,7 +318,7 @@ links:
 category: navigation
 */
 nav ul {
-  list-style: none;
+  list-style  : none;
   padding-left: 0;
 }
 
@@ -320,7 +335,7 @@ links:
 category: navigation
 */
 nav li:before {
-  content: "\200B";
+  content : "\200B";
   position: absolute;
 }
 
@@ -337,16 +352,17 @@ links:
 category: accessibility
 */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   ::before,
   ::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
+    animation-delay          : -1ms !important;
+    animation-duration       : 1ms !important;
     animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-delay: 0s !important;
-    transition-duration: 0s !important;
+    background-attachment    : initial !important;
+    scroll-behavior          : auto !important;
+    transition-delay         : 0s !important;
+    transition-duration      : 0s !important;
   }
 }
 
@@ -378,6 +394,7 @@ category: typography
 html {
   line-height: 1.5;
 }
+
 h1,
 h2,
 h3,
@@ -386,6 +403,7 @@ h5,
 h6 {
   line-height: 1.25;
 }
+
 caption,
 figcaption,
 label,
@@ -395,12 +413,17 @@ legend {
 
 .feather,
 .feather-icon {
-  fill: none;
-  flex: 0 0 1em;
-  height: 1em;
-  min-width: 1em;
-  stroke-linecap: round;
+  fill           : none;
+  flex           : 0 0 1em;
+  height         : 1em;
+  min-width      : 1em;
+  stroke         : currentColor;
+  stroke-linecap : round;
   stroke-linejoin: round;
-  stroke-width: 2px;
-  stroke: currentColor;
+  stroke-width   : 2px;
+}
+
+
+body {
+  min-height: 100vh;
 }

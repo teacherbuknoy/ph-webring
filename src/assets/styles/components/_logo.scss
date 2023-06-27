@@ -1,0 +1,25 @@
+.logo {
+  display    : flex;
+  gap        : 1ch;
+  align-items: center;
+
+  &__icon {
+    max-width: 5ch;
+  }
+
+  &__type {
+    display       : flex;
+    flex-direction: column;
+  }
+
+  &__brand {
+    height: var(--fs-6);
+    width : 20ch;
+  }
+
+  &__motto {
+    font-family: var(--font-sans);
+    font-size  : var(--fs-8);
+    color      : hsl(var(--fg-4));
+  }
+}

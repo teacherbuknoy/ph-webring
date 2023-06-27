@@ -1,0 +1,151 @@
+$w-desktop: 1080px;
+
+.navigation {
+  border-radius        : var(--radius-3);
+  display              : grid;
+  justify-content      : space-between;
+  margin-inline        : auto;
+  position             : sticky;
+  top                  : var(--space-xs);
+  transition           : background-color 200ms, box-shadow 200ms, width 200ms, margin 200ms;
+  width                : 100%;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__section {
+    align-items: center;
+    display    : flex;
+    padding    : var(--space-xs);
+
+    &.desktop,
+    .desktop {
+      display: none;
+
+      @media (min-width: $w-desktop) {
+        display: flex
+      }
+    }
+
+    &.mobile,
+    .mobile {
+      @media (min-width: $w-desktop) {
+        display: none;
+      }
+    }
+
+    &.start {
+      justify-content: start;
+      grid-column    : 1/2;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+
+    &.end {
+      justify-content: end;
+      grid-column    : -1/-2;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap    : var(--space);
+    margin : 0;
+
+    li {
+      position: relative;
+    }
+  }
+
+  &__link {
+    align-items     : center;
+    background-color: transparent;
+    border          : none;
+    border-radius   : var(--radius-3);
+    color           : hsl(var(--fg-2));
+    cursor          : pointer;
+    display         : flex;
+    font-family     : var(--font-sans);
+    font-size       : inherit;
+    line-height     : 1.15;
+    padding         : var(--space-xs) var(--space-xl);
+    position        : relative;
+    text-decoration : none;
+    transition      : background-color 200ms, box-shadow 200ms;
+
+    &:not(.brand):hover,
+    &:not(.brand):focus-within {
+      background-color: hsl(var(--bg-invert-1, var(--bg-4)));
+      background-image: linear-gradient(to bottom, hsl(var(--bg-2) / 50%), hsl(var(--bg-2) / 0%));
+      border-radius   : var(--radius-3);
+      box-shadow      : 0px 8px 16px hsl(0 0% 0% / 0.05),
+        0px 4px 8px hsl(0 0% 0% / 0.05),
+        0px 2px 4px hsl(0 0% 0% / 0.05),
+        0px 0px 1px hsl(0 0% 0% / 0.25),
+        inset 0px 1px 1px hsl(0 0% 100% / 0.1),
+        inset 0px 0px 1px hsl(0 0% 100% / 0.3);
+    }
+
+    &:active {
+      box-shadow:
+        0px 0px 1px hsl(0 0% 0% / 0.25),
+        inset 0px 1px 1px hsl(0 0% 100% / 0.1),
+        inset 0px 0px 1px hsl(0 0% 100% / 0.3);
+    }
+
+    &:focus-visible {
+      @include focus-visible;
+    }
+
+    &.brand {
+      padding: 0;
+
+      .logo__icon {
+        height: 3ch;
+        width : auto;
+      }
+
+      .logo__brand {
+        display: none;
+
+        @media (min-width: $w-desktop) {
+          display: block;
+        }
+      }
+    }
+
+    &.icon-only {
+      padding: var(--space-xs);
+    }
+  }
+
+  &.attached {
+    --outline-color: 0 0% 0%;
+    --outline-alpha: 3%;
+    --outline      : 0 0 1px hsl(var(--outline-color) / var(--outline-alpha));
+
+    --highlight-color: 0 0% 100%;
+    --highlight-alpha: 5%;
+    --highlight      :
+      inset 0 0 1px hsl(var(--highlight-color) / var(--highlight-alpha)),
+      inset 0 1px 1px hsl(var(--highlight-color) / var(--highlight-alpha));
+
+    --elevation-color: 0 0% 0%;
+    --elevation-alpha: 3%;
+    --elevation      :
+      0 2px 4px hsl(var(--elevation-color) / var(--elevation-alpha)),
+      0 4px 8px hsl(var(--elevation-color) / var(--elevation-alpha)),
+      0 8px 16px hsl(var(--elevation-color) / var(--elevation-alpha)),
+      0 16px 32px hsl(var(--elevation-color) / var(--elevation-alpha)),
+      0 32px 64px hsl(var(--elevation-color) / var(--elevation-alpha));
+
+    box-shadow      : var(--outline), var(--highlight), var(--elevation);
+    width           : min(var(--w-page), 98%);
+    background-color: hsl(var(--bg-1));
+    z-index         : 99;
+
+    .logo__brand {
+      display: none;
+    }
+  }
+}

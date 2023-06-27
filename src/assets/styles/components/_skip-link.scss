@@ -1,0 +1,12 @@
+.skip-link {
+  position  : fixed;
+  top       : var(--space);
+  left      : 50%;
+  translate : -50%;
+  transition: translate 200ms;
+  z-index   : 99999999;
+
+  &:not(:focus):not(:focus-visible) {
+    translate: -50% calc(-100% - var(--space-xxl));
+  }
+}

@@ -1,0 +1,28 @@
+@font-face {
+  font-family            : 'Inter';
+  font-display           : swap;
+  font-weight            : 100 900;
+  font-style             : normal italic;
+  font-feature-settings: 'zero'1, 'cv08'1, 'cv09'1, 'cv10'1;
+  src                    :
+    url('/assets/fonts/Inter.ttf') format('truetype'),
+    url('/assets/fonts/Inter.var.woff2') format('woff2');
+}
+
+@font-face {
+  font-family            : 'Fraunces';
+  font-display           : swap;
+  font-weight            : 100 900;
+  font-style             : normal;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  src                    : url('/assets/fonts/Fraunces-var.ttf') format('truetype');
+}
+
+@font-face {
+  font-family            : 'Fraunces';
+  font-display           : swap;
+  font-weight            : 100 900;
+  font-style             : italic;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  src                    : url('/assets/fonts/Fraunces-ital-var.ttf') format('truetype');
+}
