@@ -1,0 +1,44 @@
+/* @docs
+label: Font Utilities
+
+category: file
+*/
+
+/* @docs
+label: Viewport-based Font Sizes
+
+note: |
+  Responsive font sizes adjust based on the viewport width.
+  Format is `.fsv-{size}`, where `size` can be 1 through 9, where `.fsv-7` is the regular body copy size.
+
+category: global
+*/
+$fsv-start: 1;
+$fsv-end: 7;
+
+.fsv {
+  @for $i from $fsv-start through $fsv-end {
+    &-#{$i} {
+      font-size: var(--fsv-#{$i});
+    }
+  }
+}
+
+/* @docs
+label: Relative Font Sizes
+
+note: |
+  Relative font sizes (sizes that use `em` instead of `rem`) follows the format `.fsr-{size}`.
+
+category: global
+*/
+$fsr-start: 1;
+$fsr-end  : 7;
+
+.fsr {
+  @for $i from $fsr-start through $fsr-end {
+    &-#{$i} {
+      font-size: var(--fsr-#{$i});
+    }
+  }
+}

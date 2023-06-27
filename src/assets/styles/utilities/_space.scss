@@ -1,0 +1,30 @@
+$spaces: xxxs, xxs, xs, s, m, l, xl, xxl, xxxl, auto, none;
+$directions: top, bottom, left, right, inline, inline-start, inline-end, block, block-start, block-end;
+
+.padding {
+  @each $size in $spaces {
+    &-#{$size} {
+      padding: var(--space-#{$size});
+    }
+
+    @each $d in $directions {
+      &-#{$d}-#{$size} {
+        padding-#{$d}: var(--space-#{$size});
+      }
+    }
+  }
+}
+
+.margin {
+  @each $size in $spaces {
+    &-#{$size} {
+      margin: var(--space-#{$size});
+    }
+
+    @each $d in $directions {
+      &-#{$d}-#{$size} {
+        margin-#{$d}: var(--space-#{$size});
+      }
+    }
+  }
+}

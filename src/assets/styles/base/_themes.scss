@@ -18,9 +18,9 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family     : var(--font-sans);
   background-color: hsl(var(--bg-2));
-  color: hsl(var(--fg-2));
+  color           : hsl(var(--fg-2));
 }
 
 h1,
@@ -31,6 +31,7 @@ h5,
 h6 {
   margin     : 0;
   line-height: 1;
+  font-family: var(--font-serif);
 }
 
 h1 {
@@ -55,4 +56,11 @@ h5 {
 
 h6 {
   font-size: var(--fsv-6)
+}
+
+p,
+ul,
+ol,
+dl {
+  font-size: var(--fs-6);
 }

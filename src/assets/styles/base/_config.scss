@@ -145,10 +145,14 @@ category: global
   --space-xxl : #{$space * 1.75};
   --space-xl  : #{$space * 1.5};
   --space-l   : #{$space * 1.25};
+  --space-m   : #{$space * 1};
   --space-s   : #{$space * 0.75};
   --space-xs  : #{$space * 0.5};
   --space-xxs : #{$space * 0.25};
   --space-xxxs: #{$space * 0.1};
+
+  --space-auto: auto;
+  --space-none: 0;
 }
 
 /* @docs

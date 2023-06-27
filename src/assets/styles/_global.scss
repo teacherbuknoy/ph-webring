@@ -19,5 +19,8 @@
 }
 
 @layer utilities {
+  @import "utilities/colors";
+  @import "utilities/font";
+  @import "utilities/space";
   @import "utilities/visibility";
 }

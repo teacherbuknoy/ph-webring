@@ -1,0 +1,13 @@
+$colors: light, dark, rose, "gold", warning, danger, success, info;
+$level-start: 1;
+$level-end: 5;
+
+.text {
+  @each $color in $colors {
+    @for $level from $level-start through $level-end {
+      &-#{$color}-#{$level} {
+        color: hsl(var(--#{$color}-#{$level}));
+      }
+    }
+  }
+}
