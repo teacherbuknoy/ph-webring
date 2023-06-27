@@ -80,19 +80,43 @@ function getFonts(theme = '') {
 function getTheme(name = '') {
   switch(name.toLowerCase()) {
     default:
-      return getFonts(name) + `:host{
+      return getFonts(name) + `
+      .webring-banner {
         --webring-font: Inter, Arial, Helvetica, system-ui, sans-serif;
         --webring-heading-font: Inter, Arial, Helvetica, system-ui, sans-serif;
         --webring-button-font: Inter, Arial, Helvetica, system-ui, sans-serif;
+
         --webring-bg: 0 0 98%;
         --webring-fg: 0 0 20%;
+        --webring-body-color: 0 0 20%;
         --webring-accent-1: 343 60% 48%;
         --webring-accent-2: 343 100% 68%;
-      }`
+      }
+
+      .webring-banner.scheme-dark {
+          --webring-bg: 0 0% 20%;
+          --webring-fg: 0 0% 98%;
+          --webring-body-color: 0 0% 98%;
+          --webring-accent-1: 343 100% 68%;
+          --webring-accent-2: 343 100% 78%;
+        }
+      
+      @media (prefers-color-scheme: dark) {
+        .webring-banner {
+          --webring-bg: 0 0% 20%;
+          --webring-fg: 0 0% 98%;
+          --webring-body-color: 0 0% 98%;
+          --webring-accent-1: 343 100% 68%;
+          --webring-accent-2: 343 100% 78%;
+        }
+      }
+      `
   }
 }
 
 class WebringBanner extends HTMLElement {
+  static SCHEMES = ['dark', 'light']
+
     constructor() {
         super();
 
@@ -100,6 +124,14 @@ class WebringBanner extends HTMLElement {
         this.url = '{{ site.baseUrl }}';
         this.image = this.url + '/assets/images/{{ site.image }}';
         this.membercount = {{ members | length}};
+        
+        const scheme = this.getAttribute('scheme')
+        const schemeIsValid = WebringBanner.SCHEMES.includes(scheme)
+        console.log({ scheme, schemeIsValid })
+
+        this.scheme =  scheme !=  null && schemeIsValid
+          ? `scheme-${scheme}`
+          : 'light'
 
         this.shadowObj = this.attachShadow({ mode: 'open' });
         this.render();
@@ -114,14 +146,19 @@ class WebringBanner extends HTMLElement {
     box-sizing: border-box;
   }
 
-  :host {
+  .webring-banner {
     font-size: 100%;
     --space: 1rem;
+    --space-xxxl: 2rem;
+    --space-xxl: 1.75rem;
+    --space-xl: 1.5rem;
     --space-l: 1.25rem;
     --space-s: 0.75rem;
     --space-xs: 0.5rem;
     --space-xxs: 0.25rem;
+    --space-xxxs: 0.1rem;
 
+    --fs-5: 2.612rem;
     --fs-6: 1.306rem;
     --fs-7: 1rem;
 
@@ -161,6 +198,7 @@ class WebringBanner extends HTMLElement {
     gap: var(--space-xxl);
     font-size: var(--fs-7);
     padding: var(--space);
+    color: hsl(var(--webring-body-color))
   }
 
   .webring-banner__image {
@@ -170,7 +208,7 @@ class WebringBanner extends HTMLElement {
   }
 
   .webring-banner__description {
-    flex: 1;
+    flex: 1 0 min(35ch, 100%);
   }
 
   .webring-banner__title {
@@ -227,9 +265,9 @@ class WebringBanner extends HTMLElement {
     transition: background 200ms, box-shadow 200ms, text-shadow 200ms, scale 50ms;
   }
 
-  .webring-banner__link:hover,
-  .webring-banner__link:focus-visible {
-    background-color: hsl(var(--webring-accent-2) / 10%)
+  .webring-banner__link:focus-visible,
+  .webring-banner__link:hover {
+    background-color: hsl(var(--webring-accent-2) / 10%);
   }
 </style>
 `;
@@ -238,7 +276,7 @@ class WebringBanner extends HTMLElement {
     getTemplate() {
         return `
           ${this.getStyles()}
-<div class="webring-banner">
+<div class="webring-banner ${this.scheme}">
   <div class="webring-banner__header">
     <img class="webring-banner__image" src="${this.image}" alt=""/>
     <div class="webring-banner__description">
