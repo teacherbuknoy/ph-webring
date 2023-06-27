@@ -1,0 +1,38 @@
+<p>Go to the Pinoy Bloggers Github repository and <a href="https://github.com/teacherbuknoy/ph-webring/compare">open a pull request</a>. Follow these instructions:</p>
+<ol>
+  <li>Fork <a href="https://github.com/teacherbuknoy/ph-webring/">the repository</a> and clone your fork to your local machine.</li>
+  <li>
+      In the file <code>src/data/members.json</code>, add your entry. You'll need to add the following:
+      <ul>
+      <li>
+        <code>title</code>: the title of your website</li>
+      <li>
+        <code>url</code>: the URL of your website</li>
+      <li>
+        <code>feeds</code>: an array of your RSS feeds. You can leave this out if your website doesn't have one. But if you do, these are what you need for each entry:
+          <ul>
+          <li>
+            <code>name</code>: the name for this RSS feed.</li>
+          <li>
+            <code>url</code>: the url for this RSS feed.</li>
+        </ul>
+      </li>
+    </ul>
+
+      This is an example of an entry in <code>members.json</code>:
+      {% highlight "json" %}[
+…
+  {
+    "title": "Francis Rubio",
+    "url": "https://francisrubio.antaresph.dev/",
+    "feeds": [
+      { "name": "Everything", "url": "https://francisrubio.antaresph.dev/feed.xml" },
+      { "name": "Posts", "url": "https://francisrubio.antaresph.dev/blog.xml" },
+      { "name": "Literature", "url": "https://francisrubio.antaresph.dev/literature.xml" },
+      { "name": "Videos", "url": "https://francisrubio.antaresph.dev/videos.xml" }
+    ]
+  }
+…
+]{% endhighlight %}
+  </li>
+</ol>

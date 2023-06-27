@@ -1,7 +1,7 @@
 code:not([class]) {
   background-color: hsl(var(--bg-3));
   padding-inline  : 0.25ch;
-  border-radius   : var(--radius-1);
+  border-radius   : var(--radius-2);
   font-size       : 90%;
 }
 
@@ -36,6 +36,7 @@ pre[class^=language] {
   white-space    : pre;
   border         : 1px solid hsl(var(--light-5));
   scrollbar-width: thin;
+  border-radius  : var(--radius-4);
 
   background:
     linear-gradient(90deg, hsl(var(--bg-1) / 20%) 30%, hsl(var(--bg-1) / 0)),
@@ -46,6 +47,10 @@ pre[class^=language] {
   background-position  : 0 0, 100%, 0 0, 100%;
   background-repeat    : no-repeat;
   background-size      : 50px 100%, 50px 1100%, 25px 100%, 25px 100%;
+
+  @at-root li & {
+    margin-block-end: 0;
+  }
 
   &::before {
     background-color       : hsl(var(--rose-4));

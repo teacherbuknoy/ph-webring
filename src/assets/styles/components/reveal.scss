@@ -1,0 +1,34 @@
+.reveal {
+	margin-block-start: var(--space-xl);
+
+	&__trigger,
+	&__body {
+		border-radius: var(--radius-4);
+		padding      : var(--space-xl);
+	}
+
+	&__trigger {
+		background-color: hsl(var(--rose-2) / 50%);
+		color           : hsl(var(--rose-5));
+		font-family     : var(--font-serif);
+		font-size       : var(--fsv-6);
+		font-weight     : bold;
+		cursor          : pointer
+	}
+
+	&__body {
+		background-color  : hsl(var(--rose-1) / 0%);
+		display           : flex;
+		flex-direction    : column;
+		gap               : var(--space);
+		margin-block-start: var(--space-l);
+
+		p,
+		ol,
+		ul,
+		dl,
+		table {
+			margin: 0;
+		}
+	}
+}
