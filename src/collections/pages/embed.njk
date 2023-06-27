@@ -148,6 +148,9 @@ class WebringBanner extends HTMLElement {
 
   .webring-banner {
     font-size: 100%;
+    width: min(75ch,90%);
+    margin: auto;
+
     --space: 1rem;
     --space-xxxl: 2rem;
     --space-xxl: 1.75rem;
@@ -198,7 +201,8 @@ class WebringBanner extends HTMLElement {
     gap: var(--space-xxl);
     font-size: var(--fs-7);
     padding: var(--space);
-    color: hsl(var(--webring-body-color))
+    color: hsl(var(--webring-body-color));
+    flex-wrap: wrap;
   }
 
   .webring-banner__image {
@@ -246,6 +250,7 @@ class WebringBanner extends HTMLElement {
     padding: var(--space-xxs);
     border-top: 1px solid #0002;
     margin: 0;
+    flex-wrap: wrap;
   }
 
   .webring-banner__link {
@@ -258,6 +263,8 @@ class WebringBanner extends HTMLElement {
     gap: 1ch;
     font-family: var(--webring-button-font);
     font-size: inherit;
+    flex: 1;
+    justify-content: center;
     font-weight: 650;
     padding: var(--space-s) var(--space-xl);
     text-decoration: none;
