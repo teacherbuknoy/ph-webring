@@ -3,6 +3,7 @@
   "description": "A webring of Filipino people with blogs.",
   "baseUrl": "https://webring.antaresph.dev",
   "baseUrl": "http://localhost:8888",
+  "repository": "https://github.com/teacherbuknoy/ph-webring",
   "image": "webring-icon.png",
   "seo": {
     "og": {

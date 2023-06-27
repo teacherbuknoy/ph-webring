@@ -4,7 +4,7 @@ eleventyComputed:
   title: "{{ site.title }}"
   description: "{{ site.description }}"
 ---
-
+{% from "macro.njk" import icon as icon %}
 <div class="section container-s margin-inline-auto margin-block-end-xxxl">
   <img src="/assets/images/webring-icon.png" alt="Philippine flag">
   <h1 class="fsv-3 text-rose-3">{{ site.title }}</h1>
@@ -47,6 +47,14 @@ eleventyComputed:
   <p>Once you're in the members list, add this widget anywhere in your site, preferrably somewhere that will be easily seen.</p>
   <div class="fsv-6">{% highlight "html" %}{% include "ui/widget.njk" %}{% endhighlight %}</div>
 
-  <p>It will look like this once it loads</p>
+  <p>It will render this banner that links to the other members:</p>
   {% include "ui/widget.njk" %}
+
+  <h2 class="fsv-4 text-rose-3">Create your own webring!</h2>
+  <p>If you want to start your own webring, fork <a href="{{ site.repository }}">this project</a> on Github and follow the instructions in the README.</p>
+
+  <a href="{{ site.repository }}" class="primary button">
+    {{ icon('github') }}
+    Fork on Github
+  </a>
 </div>

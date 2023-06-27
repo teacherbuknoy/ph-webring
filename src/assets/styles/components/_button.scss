@@ -1,6 +1,7 @@
 @import "../base/mixins";
 
 .button {
+  align-items     : center;
   background-color: transparent;
   border          : none;
   border-radius   : var(--radius-3);
@@ -10,9 +11,10 @@
   font-family     : var(--font-sans);
   font-size       : inherit;
   font-weight     : 650;
+  gap             : var(--space);
+  line-height     : 1.15;
   padding         : var(--space-s) var(--space-xl);
   text-decoration : none;
-  line-height     : 1.15;
   transition      : background 200ms, box-shadow 200ms, text-shadow 200ms, scale 50ms;
 
   &:active {
