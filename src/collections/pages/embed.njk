@@ -3,6 +3,80 @@ permalink: '/embed.js'
 layout: null
 ---
 {% from "macro.njk" import icon %}
+
+function getFonts(theme) {
+  switch(theme) {
+    case 'serif':
+      return `@font-face {
+        font-family: 'Fraunces';
+        font-display: swap;
+        font-weight: 100 900;
+        font-style: normal;
+        font-variation-settings: 'SOFT' 100, 'WONK' 1;
+        src: url("{{ site.baseUrl }}/assets/fonts/Fraunces-var.ttf") format('truetype');
+      }
+      @font-face {
+        font-family: 'Fraunces';
+        font-display: swap;
+        font-weight: 100 900;
+        font-style: italic;
+        font-variation-settings: 'SOFT' 100, 'WONK' 1;
+        src: url("{{ site.baseUrl }}/assets/fonts/Fraunces-ital-var.ttf") format('truetype');
+      }`
+    case 'tron':
+      return `@font-face {
+        font-family: 'Audiowide';
+        font-display: swap;
+        src: url("{{ site.baseUrl }}/assets/fonts/Audiowide-Regular.ttf") format('truetype');
+      }
+      @font-face {
+        font-family: 'VT323';
+        font-display: swap;
+        src: url("{{ site.baseUrl }}/assets/fonts/VT323-Regular.ttf") format('truetype');
+      }`
+    case 'coder':
+      return `@font-face {
+        font-family: 'Source Code Pro';
+        font-display: swap;
+        src: url("{{ site.baseUrl }}/assets/fonts/source-code-pro.ttf") format('truetype');
+      }`
+    case 'bading':
+    case 'trans':
+      return `@font-face {
+        font-family: 'Figtree';
+        font-display: swap;
+        src: url("{{ site.baseUrl }}/assets/fonts/Figtree-var.ttf") format('truetype');
+      }`
+    case 'plantlike':
+      return `@font-face {
+        font-family: 'Alegreya';
+        font-display: swap;
+        src: url("{{ site.baseUrl }}/assets/fonts/alegreya-var.ttf") format('truetype');
+      }
+      
+      @font-face {
+        font-family: 'Alegreya Sans';
+        font-display: swap;
+        src: url("{{ site.baseUrl }}/assets/fonts/alegreya-sans.ttf") format('truetype');
+      }`
+    case 'borderline':
+    return `@font-face {
+        font-family: 'Merriweather';
+        font-display: swap;
+        src: url("{{ site.baseUrl }}/assets/fonts/merriweather.ttf") format('truetype');
+      }`
+    default:
+      return `@font-face {
+        font-family: 'Inter';
+        font-display: swap;
+        font-weight: 100 900;
+        font-style: normal italic;
+        font-feature-settings: 'zero'1, 'cv08'1, 'cv09'1, 'cv10'1;
+        src: url("{{ site.baseUrl }}/assets/fonts/Inter.ttf") format('truetype'), url("{{ site.baseUrl }}/assets/fonts/Inter.var.woff2") format('woff2');
+      }`
+  }
+}
+
 class WebringBanner extends HTMLElement {
     constructor() {
         super();
@@ -19,73 +93,25 @@ class WebringBanner extends HTMLElement {
     getStyles() {
         return `
         <style>
-  @font-face {
-    font-family: 'Inter';
-    font-display: swap;
-    font-weight: 100 900;
-    font-style: normal italic;
-    font-feature-settings: 'zero'1, 'cv08'1, 'cv09'1, 'cv10'1;
-    src: url("{{ site.baseUrl }}/assets/fonts/Inter.ttf") format('truetype'), url("{{ site.baseUrl }}/assets/fonts/Inter.var.woff2") format('woff2');
-  }
 
-  @font-face {
-    font-family: 'Fraunces';
-    font-display: swap;
-    font-weight: 100 900;
-    font-style: normal;
-    font-variation-settings: 'SOFT' 100, 'WONK' 1;
-    src: url("{{ site.baseUrl }}/assets/fonts/Fraunces-var.ttf") format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Fraunces';
-    font-display: swap;
-    font-weight: 100 900;
-    font-style: italic;
-    font-variation-settings: 'SOFT' 100, 'WONK' 1;
-    src: url("{{ site.baseUrl }}/assets/fonts/Fraunces-ital-var.ttf") format('truetype');
-  }
-
+        ${getFonts('trans')}
   * {
     box-sizing: border-box;
   }
 
   :host {
     font-size: 100%;
-    --font-sans: Inter, Arial, Helvetica, system-ui, sans-serif;
-    --font-serif: Fraunces, Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
-    --font-mono: 'Cascadia Code', Consolas, Monaco, ui-monospace, monospace;
-
     --space: 1rem;
-    --space-xxxl: 2rem;
-    --space-xxl: 1.75rem;
-    --space-xl: 1.5rem;
     --space-l: 1.25rem;
-    --space-m: 1rem;
     --space-s: 0.75rem;
     --space-xs: 0.5rem;
     --space-xxs: 0.25rem;
-    --space-xxxs: 0.1rem;
-    --space-auto: auto;
-    --space-none:0 --fs-1: 7.836rem;
-    --fs-2: 6.53rem;
-    --fs-3: 5.224rem;
-    --fs-4: 3.918rem;
-    --fs-5: 2.612rem;
+
     --fs-6: 1.306rem;
     --fs-7: 1rem;
-    --fs-8: 0.9795rem;
-    --fs-9: 0.653rem;
 
-    --fsr-1: 7.836em;
-    --fsr-2: 6.53em;
-    --fsr-3: 5.224em;
-    --fsr-4: 3.918em;
     --fsr-5: 2.612em;
     --fsr-6: 1.306em;
-    --fsr-7: 1em;
-    --fsr-8: 0.9795em;
-    --fsr-9: 0.653em;
 
     --radius-1: 2px;
     --radius-2: 4px;
@@ -93,6 +119,8 @@ class WebringBanner extends HTMLElement {
     --radius-4: 16px;
     --radius-5: 32px;
 
+    --webring-font: Inter, Arial, Helvetica, system-ui, sans-serif;
+    --webring-heading-font: Inter, Arial, Helvetica, system-ui, sans-serif;
     --webring-bg: 0 0 98%;
     --webring-fg: 0 0 20%;
     --webring-accent-1: 343 60% 48%;
@@ -115,7 +143,7 @@ class WebringBanner extends HTMLElement {
 
   .webring-banner {
     background-color: hsl(var(--webring-bg));
-    font-family: var(--font-sans);
+    font-family: var(--webring-font);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 16px 32px 0 rgba(0, 0, 0, 0.05), 0 32px 64px 0 rgba(0, 0, 0, 0.05), 0 64px 128px 0 rgba(0, 0, 0, 0.05), 0 0 1px 0 rgba(0, 0, 0, 0.25);
     border-radius: var(--radius-3);
   }
@@ -141,6 +169,7 @@ class WebringBanner extends HTMLElement {
     margin: 0;
     line-height: 1.2;
     font-size: var(--fs-5);
+    font-family: var(--webring-heading-font);
   }
 
   .webring-banner__title a {
