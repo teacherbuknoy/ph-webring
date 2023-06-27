@@ -1,11 +1,10 @@
 const path = require('path')
 const sass = require('sass')
+const utils = require('./lib/build-utils')
 
-const Stylesheets = require('./__styles.11ty')
-
-class StylesheetSourcemap {
+class Stylesheets {
   constructor() {
-    this.inputFiles = new Stylesheets().inputFiles
+    this.inputFiles = utils.getStylesheets(path.resolve(__dirname, '../styles'))
   }
 
   data() {
@@ -17,7 +16,7 @@ class StylesheetSourcemap {
         alias: 'cssFile',
         size: 1
       },
-      permalink: ({ cssFile }) => `/assets/styles/${cssFile}.min.css.map`
+      permalink: ({ cssFile }) => `/assets/styles/${cssFile}.css`
     }
   }
 
@@ -34,10 +33,11 @@ class StylesheetSourcemap {
   }
 
   render({ cssFile }) {
+    console.log("[CSS] Rendering style:", this.inputFiles[cssFile])
     const scss = path.join(__dirname, `/${this.inputFiles[cssFile]}`)
     const css = this.compile(scss, this.configure())
-    return JSON.stringify(css.sourceMap)
+    return `${css.css}\n/*# sourceMappingURL=${cssFile}.min.css.map */`
   }
 }
 
-module.exports = StylesheetSourcemap
+module.exports = Stylesheets
