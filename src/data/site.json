@@ -1,0 +1,66 @@
+{
+  "title": "eleventy-template",
+  "description": "Base project for eleventy websites",
+  "baseUrl": "http://localhost:8080",
+  "seo": {
+    "og": {
+      "src": ""
+    },
+    "twitter": {
+      "src": ""
+    }
+  },
+  "contact": {
+    "phone": {
+      "name": "Contact Number",
+      "identifier": "+63 912 345 6789",
+      "url":"tel:+639123456789"
+    },
+    "email": {
+      "name": "",
+      "identifier": "",
+      "url": ""
+    },
+    "linkedin": {
+      "name": "",
+      "identifier": "",
+      "url": ""
+    },
+    "instagram": {
+      "name": "",
+      "identifier": "",
+      "url": ""
+    },
+    "twitter": {
+      "name": "",
+      "identifier": "",
+      "url": ""
+    },
+    "github": {
+      "name": "",
+      "identifier": "",
+      "url": ""
+    },
+    "mastodon": {
+      "name": "",
+      "identifier": "",
+      "url": ""
+    },
+    "youtube": {
+      "name": "",
+      "identifier": "",
+      "url": ""
+    }
+  },
+  "domains": [
+    {
+      "name": "",
+      "domain": "",
+      "isPreferred": false
+    }
+  ],
+  "api": {
+    "email": "",
+    "siteData": "/api/v1/site-data.json"
+  }
+}

@@ -1,0 +1,406 @@
+/* @docs
+label: Core Remedies
+version: 0.1.0-beta.2
+
+note: |
+  These remedies are recommended
+  as a starter for any project.
+
+category: file
+*/
+
+/* @docs
+label: Box Sizing
+
+note: |
+  Use border-box by default, globally.
+
+category: global
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* @docs
+label: Line Sizing
+
+note: |
+  Consistent line-spacing,
+  even when inline elements have different line-heights.
+
+links:
+  - https://drafts.csswg.org/css-inline-3/#line-sizing-property
+
+category: global
+*/
+html {
+  line-sizing: normal;
+}
+
+/* @docs
+label: Body Margins
+
+note: |
+  Remove the tiny space around the edge of the page.
+
+category: global
+*/
+body {
+  margin: 0;
+}
+
+/* @docs
+label: Hidden Attribute
+
+note: |
+  Maintain `hidden` behaviour when overriding `display` values.
+
+  category: global
+*/
+[hidden] {
+  display: none;
+}
+
+/* @docs
+label: Heading Sizes
+
+note: |
+  Switch to rem units for headings
+
+category: typography
+*/
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.17rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.83rem;
+}
+h6 {
+  font-size: 0.67rem;
+}
+
+/* @docs
+label: H1 Margins
+
+note: |
+  Keep h1 margins consistent, even when nested.
+
+category: typography
+*/
+h1 {
+  margin: 0.67em 0;
+}
+
+/* @docs
+label: Pre Wrapping
+
+note: |
+  Overflow by default is bad...
+
+category: typography
+*/
+pre {
+  white-space: pre-wrap;
+}
+
+/* @docs
+label: Horizontal Rule
+
+note: |
+  1. Solid, thin horizontal rules
+  2. Remove Firefox `color: gray`
+  3. Remove default `1px` height, and common `overflow: hidden`
+
+category: typography
+*/
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* @docs
+label: Responsive Embeds
+
+note: |
+  1. Block display is usually what we want
+  2. The `vertical-align` removes strange space-below in case authors overwrite the display value
+  3. Responsive by default
+  4. Audio without `[controls]` remains hidden by default
+
+category: embedded elements
+*/
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+audio:not([controls]) {
+  display: none;
+}
+
+/* @docs
+label: Responsive Images
+
+note: |
+  These new elements display inline by default,
+  but that's not the expected behavior for either one.
+  This can interfere with proper layout and aspect-ratio handling.
+
+  1. Remove the unnecessary wrapping `picture`, while maintaining contents
+  2. Source elements have nothing to display, so we hide them entirely
+
+category: embedded elements
+*/
+picture {
+  display: contents;
+}
+source {
+  display: none;
+}
+
+/* @docs
+label: Aspect Ratios
+
+note: |
+  Maintain intrinsic aspect ratios when `max-width` is applied.
+  `iframe`, `embed`, and `object` are also embedded,
+  but have no intrinsic ratio,
+  so their `height` needs to be set explicitly.
+
+category: embedded elements
+*/
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+/* @docs
+label: Audio Width
+
+note: |
+  There is no good reason elements default to 300px,
+  and audio files are unlikely to come with a width attribute.
+
+category: embedded elements
+*/
+audio {
+  width: 100%;
+}
+
+/* @docs
+label: Image Borders
+
+note: |
+  Remove the border on images inside links in IE 10 and earlier.
+
+category: legacy browsers
+*/
+img {
+  border-style: none;
+}
+
+/* @docs
+label: SVG Overflow
+
+note: |
+  Hide the overflow in IE 10 and earlier.
+
+category: legacy browsers
+*/
+svg {
+  overflow: hidden;
+}
+
+/* @docs
+label: HTML5 Elements
+
+note: |
+  Default block display on HTML5 elements.
+  For oldIE to apply this styling one needs to add some JS as well (i.e. `document.createElement("main")`)
+
+links:
+  - https://www.sitepoint.com/html5-older-browsers-and-the-shiv/
+
+category: legacy browsers
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/* @docs
+label: Checkbox & Radio Inputs
+
+note: |
+  1. Add the correct box sizing in IE 10
+  2. Remove the padding in IE 10
+
+category: legacy browsers
+*/
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* @docs
+label: Reminders
+version: 0.1.0-beta.2
+
+note: |
+  All the remedies in this file are commented out by default,
+  because they could cause harm as general defaults.
+  These should be used as reminders
+  to handle common styling issues
+  in a way that will work for your project and users.
+  Read, explore, uncomment, and edit as needed.
+
+category: file
+*/
+
+/* @docs
+label: List Style
+
+note: |
+  List styling is not usually desired in navigation,
+  but this also removes list-semantics for screen-readers
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/15
+
+category: navigation
+*/
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* @docs
+label: List Voiceover
+
+note: |
+  1. Add zero-width-space to prevent VoiceOver disable
+  2. Absolute position ensures no extra space
+
+links:
+  - https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/
+
+category: navigation
+*/
+nav li:before {
+  content: "\200B";
+  position: absolute;
+}
+
+/* @docs
+label: Reduced Motion
+
+note: |
+  1. Immediately jump any animation to the end point
+  2. Remove transitions & fixed background attachment
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/11
+
+category: accessibility
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* @docs
+label: Line Heights
+
+note: |
+  The default `normal` line-height is tightly spaced,
+  but takes font-metrics into account,
+  which is important for many fonts.
+  Looser spacing may improve readability in latin type,
+  but may cause problems in some scripts --
+  from cusrive/fantasy fonts to
+  [Javanese](https://jsbin.com/bezasax/1/edit?html,css,output),
+  [Persian](https://jsbin.com/qurecom/edit?html,css,output),
+  and CJK languages.
+
+links:
+  - https://github.com/mozdevs/cssremedy/issues/7
+  - https://jsbin.com/bezasax/1/edit?html,css,output
+  - https://jsbin.com/qurecom/edit?html,css,output
+
+todo: |
+  - Use `:lang(language-code)` selectors?
+  - Add typography remedies for other scripts & languages...
+
+category: typography
+*/
+html {
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+caption,
+figcaption,
+label,
+legend {
+  line-height: 1.375;
+}
+
+.feather,
+.feather-icon {
+  fill: none;
+  flex: 0 0 1em;
+  height: 1em;
+  min-width: 1em;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+  stroke: currentColor;
+}

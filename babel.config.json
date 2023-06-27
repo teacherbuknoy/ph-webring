@@ -1,0 +1,6 @@
+{
+  "presets": ["minify"],
+  "targets":"last 5 versions",
+  "sourceMaps": true,
+  "highlightCode": true
+}
