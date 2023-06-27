@@ -9,16 +9,12 @@ eleventyComputed:
   <img src="/assets/images/webring-icon.png" alt="Philippine flag">
   <h1 class="fsv-3 text-rose-3">{{ site.title }}</h1>
   <p>{{ site.description }}</p>
-  <p>Your blog can be about anything. It can be about design, development, architecture, medicine, cross-stitching, knitting, puzzles, travelling—anything!</p>
+  <p class="fs-7">Your blog can be about anything. It can be about design, development, architecture, medicine, cross-stitching, knitting, puzzles, travelling—anything!</p>
 
-  <h2 class="fsv-4 text-rose-3">Members</h2>
-  <ul>
-    {% for member in members %}
-      <li>
-        <a href="{{ member.url }}">{{ member.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} member)</small></h2>
+  {% for member in members %}
+    {% unfurl member.url %}
+  {% endfor %}
 
   <h2 class="fsv-4 text-rose-3">What's this?</h2>
   <blockquote>

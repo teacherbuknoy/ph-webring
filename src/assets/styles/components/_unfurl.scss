@@ -1,0 +1,51 @@
+.unfurl {
+  display              : grid;
+  grid-template-columns: 10ch 1fr;
+  grid-template-areas  :
+    "image heading"
+    "image description"
+    "image small"
+  ;
+  margin-block: var(--space);
+  column-gap  : var(--space);
+}
+
+.unfurl__meta {
+  display    : flex;
+  align-items: center;
+  gap        : 1ch;
+  grid-area  : small;
+  font-size  : var(--fs-9);
+}
+
+.unfurl__logo {
+  width : 4ch;
+  height: 4ch;
+}
+
+.unfurl__image {
+  grid-area    : image;
+  align-self   : center;
+  aspect-ratio : 1/1;
+  object-fit   : cover;
+  border-radius: var(--radius-3);
+}
+
+.unfurl__heading {
+  margin    : 0;
+  font-size : var(--fs-6);
+  align-self: end;
+  grid-area : heading;
+}
+
+.unfurl__link {
+  text-decoration: none;
+  color          : hsl(var(--rose-4));
+}
+
+.unfurl__description {
+  margin    : 0;
+  align-self: start;
+  grid-area : description;
+  font-size : var(--fs-7);
+}

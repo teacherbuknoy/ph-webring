@@ -89,15 +89,16 @@ blockquote {
   }
 
   &::before {
-    content    : '“';
-    font-family: var(--font-serif);
-    font-size  : calc(var(--fsv-1) * 2);
-    position   : absolute;
-    z-index    : -1;
+    content    : "“";
     color      : hsl(var(--light-5));
-    top        : 5rem;
+    font-family: var(--font-serif);
+    font-size  : calc(var(--fs-1)*2);
+    left       : 0;
     line-height: 0;
-    left       : -4rem;
+    position   : absolute;
+    top        : 0;
+    transform  : translateX(-50%) translateY(0.5ch);
+    z-index    : -1;
   }
 }
 

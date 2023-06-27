@@ -31,5 +31,6 @@ module.exports = {
       tags: ['h2']
     }
   }),
-  rss: () => ({ plugin: require('@11ty/eleventy-plugin-rss') })
+  rss: () => ({ plugin: require('@11ty/eleventy-plugin-rss') }),
+  unfurl: () => ({ plugin: require("eleventy-plugin-unfurl") })
 }
