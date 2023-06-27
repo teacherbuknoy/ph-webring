@@ -1,7 +1,6 @@
 {
-  "title": "eleventy-template",
-  "description": "Base project for eleventy websites",
-  "baseUrl": "http://localhost:8080",
+  "title": "Pinoy Bloggers",
+  "description": "A webring of Filipino people with blogs.",
   "seo": {
     "og": {
       "src": ""
