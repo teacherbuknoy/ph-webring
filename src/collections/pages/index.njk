@@ -50,6 +50,17 @@ eleventyComputed:
   <p>It will render this banner that links to the other members:</p>
   {% include "ui/widget.njk" %}
 
+  <details class="reveal">
+    <summary class="reveal__trigger">For developers</summary>
+    <div class="reveal__body">
+      <p>The <code>&lt;webring-banner /></code> component has an attribute called `scheme` that says which color scheme to use, which can either be `light` or `dark`. If it's not provided, the component follows the system color scheme. The following is an example of the banner with dark color scheme</p>
+      {% set webringScheme = 'dark' %}
+      <div class="fsv-6">{% highlight "html" %}{% include "ui/widget.njk" %}{% endhighlight %}</div>
+
+      {% include "ui/widget.njk" %}
+    </div>
+  </details>
+
   <h2 class="fsv-4 text-rose-3">Create your own webring!</h2>
   <p>If you want to start your own webring, fork <a href="{{ site.repository }}">this project</a> on Github and follow the instructions in the README.</p>
 
