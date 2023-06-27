@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .webring-banner {
+    font-size: 100%;
+    width: min(75ch,90%);
+    margin: auto;
+
+    --space: 1rem;
+    --space-xxxl: 2rem;
+    --space-xxl: 1.75rem;
+    --space-xl: 1.5rem;
+    --space-l: 1.25rem;
+    --space-s: 0.75rem;
+    --space-xs: 0.5rem;
+    --space-xxs: 0.25rem;
+    --space-xxxs: 0.1rem;
+
+    --fs-5: 2.612rem;
+    --fs-6: 1.306rem;
+    --fs-7: 1rem;
+
+    --fsr-5: 2.612em;
+    --fsr-6: 1.306em;
+
+    --radius-1: 2px;
+    --radius-2: 4px;
+    --radius-3: 8px;
+    --radius-4: 16px;
+    --radius-5: 32px;
+  }
+
+  .feather,
+  .feathericon {
+    display: inline-block;
+    fill: none;
+    flex: 0 0 1em;
+    height: 1em;
+    min-width: 1em;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    width: 1em;
+  }
+
+  .webring-banner {
+    background-color: hsl(var(--webring-bg));
+    font-family: var(--webring-font);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 16px 32px 0 rgba(0, 0, 0, 0.05), 0 32px 64px 0 rgba(0, 0, 0, 0.05), 0 64px 128px 0 rgba(0, 0, 0, 0.05), 0 0 1px 0 rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius-3);
+  }
+
+  .webring-banner__header {
+    display: flex;
+    gap: var(--space-xxl);
+    font-size: var(--fs-7);
+    padding: var(--space);
+    color: hsl(var(--webring-body-color));
+    flex-wrap: wrap;
+  }
+
+  .webring-banner__image {
+    width: 5ch;
+    height: auto;
+    align-self: center;
+  }
+
+  .webring-banner__description {
+    flex: 1 0 min(35ch, 100%);
+  }
+
+  .webring-banner__title {
+    margin: 0;
+    line-height: 1.2;
+    font-size: var(--fs-5);
+    font-family: var(--webring-heading-font);
+  }
+
+  .webring-banner__title a {
+    text-decoration: none;
+    color: hsl(var(--webring-accent-2));
+  }
+
+  .webring-banner__title a:hover {
+    text-decoration: underline;
+  }
+
+  .webring-banner__info {
+    color: hsl(var(--webring-accent-2));
+    text-decoration: none;
+    border: 3px solid hsl(var(--webring-accent-2) / 50%);
+    align-self: start;
+    padding: var(--space-xxxs) var(--space-s);
+    border-radius: 100px;
+    aspect-ratio: 1/1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .webring-banner__links {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xxs);
+    border-top: 1px solid #0002;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .webring-banner__link {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: var(--radius-3);
+    color: hsl(var(--webring-accent-2));
+    cursor: pointer;
+    display: inline-flex;
+    gap: 1ch;
+    font-family: var(--webring-button-font);
+    font-size: inherit;
+    flex: 1;
+    justify-content: center;
+    font-weight: 650;
+    padding: var(--space-s) var(--space-xl);
+    text-decoration: none;
+    line-height: 1.15;
+    transition: background 200ms, box-shadow 200ms, text-shadow 200ms, scale 50ms;
+  }
+
+  .webring-banner__link:focus-visible,
+  .webring-banner__link:hover {
+    background-color: hsl(var(--webring-accent-2) / 10%);
+  }
