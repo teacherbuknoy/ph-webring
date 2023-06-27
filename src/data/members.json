@@ -8,14 +8,5 @@
       { "name": "Literature", "url": "https://francisrubio.antaresph.dev/literature.xml" },
       { "name": "Videos", "url": "https://francisrubio.antaresph.dev/videos.xml" }
     ]
-  },
-  {
-    "title": "Antares Programming",
-    "url": "https://www.antaresph.dev/",
-    "feeds": [
-      { "name": "Articles", "url": "https://www.antaresph.dev/rss-articles.xml" },
-      { "name": "Infographics", "url": "https://www.antaresph.dev/rss-infographics.xml" },
-      { "name": "Videos", "url": "https://www.antaresph.dev/rss-videos.xml" }
-    ]
   }
 ]
