@@ -81,7 +81,7 @@ function getTheme(name = '') {
   switch(name.toLowerCase()) {
     default:
       return getFonts(name) + `
-      .webring-banner {
+      .webring-banner, .webring-banner.scheme-light {
         --webring-font: Inter, Arial, Helvetica, system-ui, sans-serif;
         --webring-heading-font: Inter, Arial, Helvetica, system-ui, sans-serif;
         --webring-button-font: Inter, Arial, Helvetica, system-ui, sans-serif;
