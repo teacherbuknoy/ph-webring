@@ -16,3 +16,15 @@
   to = "/.netlify/functions/next"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/previous"
+  to = "/.netlify/functions/previous"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prev"
+  to = "/.netlify/functions/previous"
+  status = 301
+  force = true

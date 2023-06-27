@@ -11,7 +11,7 @@
   },
   {
     "title": "Antares Programming",
-    "url": "https://antaresph.dev/",
+    "url": "https://www.antaresph.dev/",
     "feeds": [
       { "name": "Articles", "url": "https://www.antaresph.dev/rss-articles.xml" },
       { "name": "Infographics", "url": "https://www.antaresph.dev/rss-infographics.xml" },
