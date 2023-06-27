@@ -1,0 +1,89 @@
+---
+permalink: /test/
+layout: null
+---
+{% from "macro.njk" import icon %}
+<style>
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: normal italic;
+    font-feature-settings: 'zero'1, 'cv08'1, 'cv09'1, 'cv10'1;
+    src: url("{{ site.baseUrl }}/assets/fonts/Inter.ttf") format('truetype'), url("{{ site.baseUrl }}/assets/fonts/Inter.var.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Fraunces';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: normal;
+    font-variation-settings: 'SOFT' 100, 'WONK' 1;
+    src: url("{{ site.baseUrl }}/assets/fonts/Fraunces-var.ttf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Fraunces';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: italic;
+    font-variation-settings: 'SOFT' 100, 'WONK' 1;
+    src: url("{{ site.baseUrl }}/assets/fonts/Fraunces-ital-var.ttf") format('truetype');
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    font-size: 100%;
+    --font-sans: Inter, Arial, Helvetica, system-ui, sans-serif;
+    --font-serif: Fraunces, Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+    --font-mono: 'Cascadia Code', Consolas, Monaco, ui-monospace, monospace;
+  }
+
+  .feather,
+  .feathericon {
+    display: inline-block;
+    fill: none;
+    flex: 0 0 1em;
+    height: 1em;
+    min-width: 1em;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    width: 1em;
+  }
+
+  .webring-banner {
+    font-family: var(--font-sans);
+  }
+</style>
+<div class="webring-banner">
+  <div class="webring-banner__header">
+    <img class="webring-banner__image" src="${this.image}" alt=""/>
+    <div class="webring-banner__description">
+      <span>This site is part of</span>
+      <h3 class="webring-banner__title">
+        <a href="${this.url}">${this.ringtitle}</a>
+      </h3>
+      <span>A webring with ${this.membercount} Members</span>
+    </div>
+    <a class="webring-banner__info" href="https://en.wikipedia.org/wiki/Webring" title="What's this?">?</a>
+  </div>
+  <p class="webring-banner__links">
+    <a href="${this.url}/prev" class="webring-banner__link webring-banner__link--prev" aria-label="Go to previous site">
+      {{ icon(name = 'chevron-left', baseUrl = site.baseUrl) }}
+      Previous
+    </a>
+    <a href="${this.url}/random" class="webring-banner__link webring-banner__link--random" aria-label="Go to a random site">
+      {{ icon(name = 'shuffle', baseUrl = site.baseUrl) }}
+      Random
+    </a>
+    <a href="${this.url}/next" class="webring-banner__link webring-banner__link--next" aria-label="Go to next site">
+      Next
+      {{ icon(name = 'chevron-right', baseUrl = site.baseUrl) }}
+    </a>
+  </p>
+</div>

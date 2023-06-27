@@ -1,0 +1,239 @@
+---
+permalink: '/embed.js'
+layout: null
+---
+{% from "macro.njk" import icon %}
+class WebringBanner extends HTMLElement {
+    constructor() {
+        super();
+
+        this.ringtitle = '{{ site.title }}';
+        this.url = '{{ site.baseUrl }}';
+        this.image = this.url + '/assets/images/{{ site.image }}';
+        this.membercount = {{ members | length}};
+
+        this.shadowObj = this.attachShadow({ mode: 'open' });
+        this.render();
+    }
+
+    getStyles() {
+        return `
+        <style>
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: normal italic;
+    font-feature-settings: 'zero'1, 'cv08'1, 'cv09'1, 'cv10'1;
+    src: url("{{ site.baseUrl }}/assets/fonts/Inter.ttf") format('truetype'), url("{{ site.baseUrl }}/assets/fonts/Inter.var.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Fraunces';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: normal;
+    font-variation-settings: 'SOFT' 100, 'WONK' 1;
+    src: url("{{ site.baseUrl }}/assets/fonts/Fraunces-var.ttf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Fraunces';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: italic;
+    font-variation-settings: 'SOFT' 100, 'WONK' 1;
+    src: url("{{ site.baseUrl }}/assets/fonts/Fraunces-ital-var.ttf") format('truetype');
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  :host {
+    font-size: 100%;
+    --font-sans: Inter, Arial, Helvetica, system-ui, sans-serif;
+    --font-serif: Fraunces, Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+    --font-mono: 'Cascadia Code', Consolas, Monaco, ui-monospace, monospace;
+
+    --space: 1rem;
+    --space-xxxl: 2rem;
+    --space-xxl: 1.75rem;
+    --space-xl: 1.5rem;
+    --space-l: 1.25rem;
+    --space-m: 1rem;
+    --space-s: 0.75rem;
+    --space-xs: 0.5rem;
+    --space-xxs: 0.25rem;
+    --space-xxxs: 0.1rem;
+    --space-auto: auto;
+    --space-none:0 --fs-1: 7.836rem;
+    --fs-2: 6.53rem;
+    --fs-3: 5.224rem;
+    --fs-4: 3.918rem;
+    --fs-5: 2.612rem;
+    --fs-6: 1.306rem;
+    --fs-7: 1rem;
+    --fs-8: 0.9795rem;
+    --fs-9: 0.653rem;
+
+    --fsr-1: 7.836em;
+    --fsr-2: 6.53em;
+    --fsr-3: 5.224em;
+    --fsr-4: 3.918em;
+    --fsr-5: 2.612em;
+    --fsr-6: 1.306em;
+    --fsr-7: 1em;
+    --fsr-8: 0.9795em;
+    --fsr-9: 0.653em;
+
+    --radius-1: 2px;
+    --radius-2: 4px;
+    --radius-3: 8px;
+    --radius-4: 16px;
+    --radius-5: 32px;
+
+    --webring-bg: 0 0 98%;
+    --webring-fg: 0 0 20%;
+    --webring-accent-1: 343 60% 48%;
+    --webring-accent-2: 343 100% 68%;
+  }
+
+  .feather,
+  .feathericon {
+    display: inline-block;
+    fill: none;
+    flex: 0 0 1em;
+    height: 1em;
+    min-width: 1em;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    width: 1em;
+  }
+
+  .webring-banner {
+    background-color: hsl(var(--webring-bg));
+    font-family: var(--font-sans);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 16px 32px 0 rgba(0, 0, 0, 0.05), 0 32px 64px 0 rgba(0, 0, 0, 0.05), 0 64px 128px 0 rgba(0, 0, 0, 0.05), 0 0 1px 0 rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius-3);
+  }
+
+  .webring-banner__header {
+    display: flex;
+    gap: var(--space-xxl);
+    font-size: var(--fs-7);
+    padding: var(--space);
+  }
+
+  .webring-banner__image {
+    width: 5ch;
+    height: auto;
+    align-self: center;
+  }
+
+  .webring-banner__description {
+    flex: 1;
+  }
+
+  .webring-banner__title {
+    margin: 0;
+    line-height: 1.2;
+    font-size: var(--fs-5);
+  }
+
+  .webring-banner__title a {
+    text-decoration: none;
+    color: hsl(var(--webring-accent-2));
+  }
+
+  .webring-banner__title a:hover {
+    text-decoration: underline;
+  }
+
+  .webring-banner__info {
+    color: hsl(var(--webring-accent-2));
+    text-decoration: none;
+    border: 3px solid hsl(var(--webring-accent-2) / 50%);
+    align-self: start;
+    padding: var(--space-xxxs) var(--space-s);
+    border-radius: 100px;
+    aspect-ratio: 1/1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .webring-banner__links {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xxs);
+    border-top: 1px solid #0002;
+    margin: 0;
+  }
+
+  .webring-banner__link {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: var(--radius-3);
+    color: hsl(var(--webring-accent-2));
+    cursor: pointer;
+    display: inline-flex;
+    gap: 1ch;
+    font-family: var(--font-sans);
+    font-size: inherit;
+    font-weight: 650;
+    padding: var(--space-s) var(--space-xl);
+    text-decoration: none;
+    line-height: 1.15;
+    transition: background 200ms, box-shadow 200ms, text-shadow 200ms, scale 50ms;
+  }
+
+  .webring-banner__link:hover,
+  .webring-banner__link:focus-visible {
+    background-color: hsl(var(--webring-accent-2) / 10%)
+  }
+</style>
+`;
+    }
+
+    getTemplate() {
+        return `
+          ${this.getStyles()}
+<div class="webring-banner">
+  <div class="webring-banner__header">
+    <img class="webring-banner__image" src="${this.image}" alt=""/>
+    <div class="webring-banner__description">
+      <span>This site is part of</span>
+      <h3 class="webring-banner__title">
+        <a href="${this.url}">${this.ringtitle}</a>
+      </h3>
+      <span>A webring with ${this.membercount} Members</span>
+    </div>
+    <a class="webring-banner__info" href="https://en.wikipedia.org/wiki/Webring" title="What's this?">?</a>
+  </div>
+  <p class="webring-banner__links">
+    <a href="${this.url}/prev" class="webring-banner__link webring-banner__link--prev" aria-label="Go to previous site">
+      {{ icon(name = 'chevron-left', baseUrl = site.baseUrl) }}
+      Previous
+    </a>
+    <a href="${this.url}/random" class="webring-banner__link webring-banner__link--random" aria-label="Go to a random site">
+      {{ icon(name = 'shuffle', baseUrl = site.baseUrl) }}
+      Random
+    </a>
+    <a href="${this.url}/next" class="webring-banner__link webring-banner__link--next" aria-label="Go to next site">
+      Next
+      {{ icon(name = 'chevron-right', baseUrl = site.baseUrl) }}
+    </a>
+  </p>
+</div>
+`;
+    }
+
+    render() {
+        this.shadowObj.innerHTML = this.getTemplate();
+    }
+}
+
+customElements.define('webring-banner', WebringBanner);
