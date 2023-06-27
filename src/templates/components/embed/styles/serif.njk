@@ -1,0 +1,30 @@
+.webring-banner,
+.webring-banner.scheme-light {
+  --webring-font        : Fraunces, Times New Roman, serif;
+  --webring-heading-font: Fraunces, Times New Roman, serif;
+  --webring-button-font : Fraunces, Times New Roman, serif;
+
+  --webring-bg        : 0 0 98%;
+  --webring-fg        : 0 0 20%;
+  --webring-body-color: 0 0 20%;
+  --webring-accent-1  : 343 60% 48%;
+  --webring-accent-2  : 343 100% 68%;
+}
+
+.webring-banner.scheme-dark {
+  --webring-bg        : 0 0% 20%;
+  --webring-fg        : 0 0% 98%;
+  --webring-body-color: 0 0% 98%;
+  --webring-accent-1  : 343 100% 68%;
+  --webring-accent-2  : 343 100% 78%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .webring-banner {
+    --webring-bg        : 0 0% 20%;
+    --webring-fg        : 0 0% 98%;
+    --webring-body-color: 0 0% 98%;
+    --webring-accent-1  : 343 100% 68%;
+    --webring-accent-2  : 343 100% 78%;
+  }
+}

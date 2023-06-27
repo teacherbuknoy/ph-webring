@@ -4,30 +4,14 @@ layout: null
 ---
 {% from "macro.njk" import icon %}
 
-function getFonts(theme = '') {
-  switch(theme.toLowerCase()) {
-    case 'serif':
-      return `{% include "embed/fonts/serif.njk" %}`
-    case 'tron':
-      return `{% include "embed/fonts/tron.njk" %}`
-    case 'coder':
-      return `{% include "embed/fonts/coder.njk" %}`
-    case 'bading':
-    case 'trans':
-      return `{% include "embed/fonts/bading-trans.njk" %}`
-    case 'plantlike':
-      return `{% include "embed/fonts/plantlike.njk" %}`
-    case 'borderline':
-      return `{% include "embed/fonts/borderline.njk" %}`
-    default:
-      return `{% include "embed/fonts/borderline.njk" %}`
-  }
-}
-
 function getTheme(name = '') {
   switch(name.toLowerCase()) {
+    case 'serif':
+      return `{% include "embed/styles/serif.njk" %}`
+    case 'tron':
+      return `{% include "embed/styles/tron.njk" %}`
     default:
-      return getFonts(name) + `{% include "embed/styles/default.njk" %}`
+      return `{% include "embed/styles/default.njk" %}`
   }
 }
 
@@ -46,13 +30,13 @@ class WebringBanner extends HTMLElement {
       const scheme = this.getAttribute('scheme')
       const schemeIsValid = WebringBanner.SCHEMES.includes(scheme)
       this.scheme =  scheme !=  null && schemeIsValid
-        ? `scheme-${scheme}`
+        ? scheme
         : 'light'
 
       const theme = this.getAttribute('theme')
       const themeIsValid = WebringBanner.THEMES.includes(theme)
       this.theme = theme != null && themeIsValid
-        ? `theme-${theme}`
+        ? theme
         : ''
 
       this.shadowObj = this.attachShadow({ mode: 'open' });
@@ -61,12 +45,13 @@ class WebringBanner extends HTMLElement {
 
   getStyles() {
     const baseStyle = `{% include "embed/base-style.njk" %}`
-    const theme = getTheme()
+    const theme = getTheme(this.theme)
+    console.log(this.theme)
     
     return `
       <style>
-        ${getTheme()}
-        {% include "embed/base-style.njk" %}
+        ${theme}
+        ${baseStyle}
       </style>
     `;
   }

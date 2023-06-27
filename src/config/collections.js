@@ -7,11 +7,11 @@ module.exports = {
     ])
   },
 
-  posts: function (collections) {
+  themes: function (collections) {
     return collections.getFilteredByGlob([
-      "src/collections/posts/*.html",
-      "src/collections/posts/*.njk",
-      "src/collections/posts/*.md",
+      "src/collections/themes/*.html",
+      "src/collections/themes/*.njk",
+      "src/collections/themes/*.md",
     ])
   }
 }
