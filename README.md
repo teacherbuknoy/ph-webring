@@ -15,7 +15,8 @@ Inspired by [Tatiana Mac's tweet](https://twitter.com/TatianaTMac/status/1114388
   - Web component
   - `iFrame` for when JS is disabled
   - Plain HTML + CSS
-- Show an SVG ma of the ring and its members
+- Show an SVG map of the ring and its members
+- Extract info out of the member's links via indieweb
 
 The features mentioned here are taken from [Max Boeck's webring template on Github](https://github.com/maxboeck/webring)
 

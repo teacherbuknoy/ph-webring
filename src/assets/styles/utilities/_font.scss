@@ -14,7 +14,7 @@ note: |
 category: global
 */
 $fsv-start: 1;
-$fsv-end: 7;
+$fsv-end  : 7;
 
 .fsv {
   @for $i from $fsv-start through $fsv-end {
@@ -39,6 +39,23 @@ $fsr-end  : 7;
   @for $i from $fsr-start through $fsr-end {
     &-#{$i} {
       font-size: var(--fsr-#{$i});
+    }
+  }
+}
+
+/* @docs
+label: Font families
+
+category: global
+*/
+$fonts: sans,
+serif,
+mono;
+
+.font {
+  @each $font in $fonts {
+    &-#{$font} {
+      font-family: var(--font-#{$font});
     }
   }
 }

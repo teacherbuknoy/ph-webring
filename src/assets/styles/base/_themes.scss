@@ -29,9 +29,10 @@ h3,
 h4,
 h5,
 h6 {
-  margin     : 0;
-  line-height: 1;
-  font-family: var(--font-serif);
+  margin            : 0;
+  margin-block-start: 1em;
+  line-height       : 1;
+  font-family       : var(--font-serif);
 }
 
 h1 {
@@ -63,4 +64,47 @@ ul,
 ol,
 dl {
   font-size: var(--fs-6);
+}
+
+blockquote {
+  position  : relative;
+  margin-top: var(--space-xxxl);
+
+  p {
+    font-family            : var(--font-serif);
+    font-variation-settings: 'wght'350;
+  }
+
+  cite {
+    font-style         : normal;
+    font-size          : var(--fs-6);
+    margin-inline-start: auto;
+    display            : block;
+    width              : fit-content;
+    text-align         : end;
+
+    &::before {
+      content: '— ';
+    }
+  }
+
+  &::before {
+    content    : '“';
+    font-family: var(--font-serif);
+    font-size  : calc(var(--fsv-1) * 2);
+    position   : absolute;
+    z-index    : -1;
+    color      : hsl(var(--light-5));
+    top        : 5rem;
+    line-height: 0;
+    left       : -4rem;
+  }
+}
+
+pre {
+  overflow: auto;
+
+  code {
+    white-space: pre;
+  }
 }

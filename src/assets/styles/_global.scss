@@ -10,12 +10,14 @@
 }
 
 @layer components {
+  @import "components/button";
+  @import "components/card";
+  @import "components/forms";
   @import "components/icon";
   @import "components/logo";
-  @import "components/button";
-  @import "components/skip-link";
   @import "components/navigation";
-  @import "components/card";
+  @import "components/skip-link";
+  @import "components/syntax-highlight";
 }
 
 @layer utilities {

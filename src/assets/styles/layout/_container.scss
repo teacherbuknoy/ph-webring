@@ -1,9 +1,9 @@
 .container {
   margin-inline: auto;
-  width        : min(var(--w-page), 98%);
+  width        : min(var(--w-page), 90%);
 
   &-s {
-    width: min(var(--w-content), 98%);
+    width: min(var(--w-content), 90%);
   }
 }
 

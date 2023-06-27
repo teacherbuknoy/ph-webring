@@ -1,0 +1,63 @@
+<form method="POST" action="{{ site.api.email }}" class="form" name="ph-webring">
+  <div class="form-section-header padding-block-start-none">
+      <h4 class="fsv-6 font-sans margin-none">Join Pinoy Bloggers</h4>
+    </div>
+  <div class="form-group">
+    <label for="site-name" class="form-label">Site name</label>
+    <input class="form-input" type="text" name="name" id="site-name" placeholder="Jhemerlyn's Awesome Website with Ginkgo Biloba and Vitamin E" required>
+  </div>
+  <div class="form-group">
+    <label for="site-url" class="form-label">Site URL</label>
+    <input class="form-input" type="url" name="url" id="site-url" placeholder="https://jhemerlyn.com.ph" required>
+  </div>
+  <div class="form-section">
+    <div class="form-section-header">
+      <h4 class="fsv-6 font-sans">RSS Feeds <small class="form-text">(optional)</small>
+      </h4>
+      <button type="button" class="button" id="add-rss-entry">Add new RSS feed</button>
+    </div>
+    <div id="rss-entries">
+      <div class="form-group form-group--isolate row">
+        <div class="form-group">
+          <label for="feed-name" class="form-label">RSS feed name</label>
+          <input class="form-input" type="text" name="feed-name" id="feed-name" placeholder="Mga Blog Post ni Jhemerlyn">
+        </div>
+        <div class="form-group">
+          <label for="feed-url" class="form-label">Site URL</label>
+          <input class="form-input" type="url" name="feed-url" id="feed-url" placeholder="https://jhemerlyn.com.ph/feed.xml">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="primary button">Join Pinoy Bloggers</button>
+  </div>
+</form>
+<template id="new-rss-feed">
+  <div class="form-group form-group--isolate row">
+    <div class="form-group">
+      <label for="feed-name" class="form-label">RSS feed name</label>
+      <input class="form-input" type="text" name="feed-name" id="feed-name" placeholder="Mga Blog Post ni Jhemerlyn">
+    </div>
+    <div class="form-group">
+      <label for="feed-url" class="form-label">Site URL</label>
+      <input class="form-input" type="url" name="feed-url" id="feed-url" placeholder="https://jhemerlyn.com.ph/feed.xml">
+    </div>
+  </div>
+</template>
+<script>
+  const btnAddRss = document.getElementById('add-rss-entry')
+  btnAddRss.addEventListener('click', e => addRssEntry())
+
+  function addRssEntry() {
+    const container = document.getElementById('rss-entries')
+    const template = document.getElementById('new-rss-feed')
+    const entry = template
+      .content
+      .cloneNode(true)
+      .firstElementChild
+
+      container
+      .appendChild(entry)
+  }
+</script>
