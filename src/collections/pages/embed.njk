@@ -4,8 +4,8 @@ layout: null
 ---
 {% from "macro.njk" import icon %}
 
-function getFonts(theme) {
-  switch(theme) {
+function getFonts(theme = '') {
+  switch(theme.toLowerCase()) {
     case 'serif':
       return `@font-face {
         font-family: 'Fraunces';
@@ -77,6 +77,21 @@ function getFonts(theme) {
   }
 }
 
+function getTheme(name = '') {
+  switch(name.toLowerCase()) {
+    default:
+      return getFonts(name) + `:host{
+        --webring-font: Inter, Arial, Helvetica, system-ui, sans-serif;
+        --webring-heading-font: Inter, Arial, Helvetica, system-ui, sans-serif;
+        --webring-button-font: Inter, Arial, Helvetica, system-ui, sans-serif;
+        --webring-bg: 0 0 98%;
+        --webring-fg: 0 0 20%;
+        --webring-accent-1: 343 60% 48%;
+        --webring-accent-2: 343 100% 68%;
+      }`
+  }
+}
+
 class WebringBanner extends HTMLElement {
     constructor() {
         super();
@@ -92,9 +107,9 @@ class WebringBanner extends HTMLElement {
 
     getStyles() {
         return `
-        <style>
+<style>
+  ${getTheme()}
 
-        ${getFonts('trans')}
   * {
     box-sizing: border-box;
   }
@@ -118,13 +133,6 @@ class WebringBanner extends HTMLElement {
     --radius-3: 8px;
     --radius-4: 16px;
     --radius-5: 32px;
-
-    --webring-font: Inter, Arial, Helvetica, system-ui, sans-serif;
-    --webring-heading-font: Inter, Arial, Helvetica, system-ui, sans-serif;
-    --webring-bg: 0 0 98%;
-    --webring-fg: 0 0 20%;
-    --webring-accent-1: 343 60% 48%;
-    --webring-accent-2: 343 100% 68%;
   }
 
   .feather,
@@ -210,7 +218,7 @@ class WebringBanner extends HTMLElement {
     cursor: pointer;
     display: inline-flex;
     gap: 1ch;
-    font-family: var(--font-sans);
+    font-family: var(--webring-button-font);
     font-size: inherit;
     font-weight: 650;
     padding: var(--space-s) var(--space-xl);
