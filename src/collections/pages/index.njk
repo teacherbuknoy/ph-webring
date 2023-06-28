@@ -9,13 +9,23 @@ eleventyComputed:
   <img src="/assets/images/webring-icon.png" alt="Philippine flag">
   <h1 class="fsv-3 text-rose-3">{{ site.title }}</h1>
   <p>{{ site.description }}</p>
-  <p class="fs-7">Your blog can be about anything. It can be about design, development, architecture, medicine, cross-stitching, knitting, puzzles, travelling—anything!</p>
+  <p class="fs-7">Your website can be about anything. It can be your online portfolio, or be about design, development, architecture, medicine, cross-stitching, knitting, puzzles, travelling—anything (but only safe for work)!</p>
 
   <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} member)</small>
   </h2>
   {% for member in members %}
     {% unfurl member.url %}
   {% endfor %}
+
+  <div class="margin-block-xxl">
+    <a href="/feeds.xml" class="primary button">
+      {{ icon('rss') }}
+      Subscribe to all members' RSS feeds
+    </a>
+    <a href="/feeds.xml" class="button" target="_blank">
+      What's an RSS feed?
+    </a>
+  </div>
 
   <h2 class="fsv-4 text-rose-3">What's this?</h2>
   <blockquote>
@@ -24,6 +34,14 @@ eleventyComputed:
       <a href="https://mxb.dev/blog/webring-kit/#h-what%E2%80%99s-a-webring%3F">Max Boeck</a>
     </cite>
   </blockquote>
+
+  <h2 class="fsv-4 text-rose-3">Who can join</h2>
+  <p>You can join the webring if…</p>
+  <ul>
+    <li>You are a Filipino</li>
+    <li>You own a website</li>
+    <li>The website you own is safe for work (no porn, gore, anything people browsing in public will be embarrassed about)</li>
+  </ul>
 
   <h2 class="fsv-4 text-rose-3">How to join</h2>
   <details class="reveal">

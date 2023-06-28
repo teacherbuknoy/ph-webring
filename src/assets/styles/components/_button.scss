@@ -2,7 +2,7 @@
 
 .button {
   align-items     : center;
-  background-color: transparent;
+  background-color: hsl(var(--rose-1));
   border          : none;
   border-radius   : var(--radius-3);
   color           : hsl(var(--rose-4));
@@ -27,11 +27,12 @@
 
   &:focus-visible,
   &:hover {
-    background-color: hsl(var(--rose-1));
+    background-color: hsl(var(--rose-2));
+    color           : white;
   }
 
   &:focus-visible {
-    @include focus-visible;
+    @include focus-visible(hsl(var(--rose-3)));
   }
 
   &.secondary {

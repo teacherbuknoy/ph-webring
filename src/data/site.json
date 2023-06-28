@@ -1,6 +1,6 @@
 {
-  "title": "Pinoy Bloggers",
-  "description": "A webring of Filipino people with blogs.",
+  "title": "Pinoy Websites",
+  "description": "A webring of Filipino people with websites.",
   "baseUrl": "https://webring.antaresph.dev",
   "repository": "https://github.com/teacherbuknoy/ph-webring",
   "image": "webring-icon.png",
