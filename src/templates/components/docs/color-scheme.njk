@@ -1,0 +1,13 @@
+{% set excludeScript = true %}
+{% set webringClass = 'margin-block-l' %}
+{% set webringScheme = null %}
+<p class="margin-block-start-xxxl">This banner will follow the system color scheme.</p>
+{% include "ui/widget.njk" %}
+
+{% set webringScheme = 'light' %}
+<p class="margin-block-start-xxxl">This banner will always be light mode.</p>
+{% include "ui/widget.njk" %}
+
+{% set webringScheme = 'dark' %}
+<p class="margin-block-start-xxxl">This banner will always be dark mode.</p>
+{% include "ui/widget.njk" %}

@@ -51,37 +51,15 @@ eleventyComputed:
     <summary class="reveal__trigger">Color Schemes (a.k.a Dark and Light Modes)</summary>
     <div class="reveal__body">
       <div class="fsv-6">
-    {% set renderStr %}
+        {% set renderStr %}
       The widget supports different color themes and both light and dark color schemes for each theme.
 
       Add a `scheme` attribute to the `<webring-banner/>` element that is either `light` or `dark` to force a color scheme for the widget. If this attribute is not set, the widget will follow the system color scheme.
     {% endset %}
-    {{ renderStr | markdown | safe }}
-    {% highlight "html" %}
-<p>This banner will follow the system color scheme.</p>
-<webring-banner>…</webring-banner>
-
-<p>This banner will always be light mode.</p>
-<webring-banner scheme="light">…</webring-banner>
-
-<p>This banner will always be dark mode.</p>
-<webring-banner scheme="dark">…</webring-banner>
-    {% endhighlight %}
-
-    {% set excludeScript = true %}
-    {% set webringClass = 'margin-block-l' %}
-    {% set webringScheme = null %}
-    <p class="margin-block-start-xxxl">This banner will follow the system color scheme.</p>
-    {% include "ui/widget.njk" %}
-
-    {% set webringScheme = 'light' %}
-    <p class="margin-block-start-xxxl">This banner will always be light mode.</p>
-    {% include "ui/widget.njk" %}
-    
-    {% set webringScheme = 'dark' %}
-    <p class="margin-block-start-xxxl">This banner will always be dark mode.</p>
-    {% include "ui/widget.njk" %}
-  </div>
+        {{ renderStr | markdown | safe }}
+        {% highlight "html" %}{% include "docs/color-scheme-example.njk" %}{% endhighlight %}
+        {% include "docs/color-scheme.njk" %}
+      </div>
     </div>
   </details>
 
@@ -91,78 +69,17 @@ eleventyComputed:
       {% set renderStr %}
         The `<webring-banner>` also supports multiple themes. Every theme has a light and dark mode. To use a theme, add a `theme` attribute to the `<webring-banner>` element and set it to one of the following values.
       {% endset %}
-      {{ renderStr | markdown | safe }}
+          {{ renderStr | markdown | safe }}
+          {% highlight "html" %}{% include "docs/theme-example.njk" %}{% endhighlight %}
+          {% include "docs/theme.njk" %}
+        </div>
+      </details>
 
-      {% highlight "html" %}
-<webring-banner theme="serif">…</webring-banner>
-<webring-banner theme="tron">…</webring-banner>
-<webring-banner theme="coder">…</webring-banner>
-<webring-banner theme="bading">…</webring-banner>
-<webring-banner theme="trans">…</webring-banner>
-<webring-banner theme="plantlike">…</webring-banner>
-<webring-banner theme="borderline">…</webring-banner>
-    {% endhighlight %}
+      <h2 class="fsv-4 text-rose-3">Create your own webring!</h2>
+      <p>If you want to start your own webring, fork <a href="{{ site.repository }}">this project</a> on Github and follow the instructions in the README.</p>
 
-    {% set excludeScript = true %}
-    {% set webringClass = 'margin-block-l' %}
-    {% set webringScheme = null %}
-
-    {% set webringTheme = 'serif' %}
-    <h4 class="margin-block-start-xxxl fsv-5">Serif</h4>
-    {% set webringScheme = 'light' %}
-    {% include "ui/widget.njk" %}
-    {% set webringScheme = 'dark' %}
-    {% include "ui/widget.njk" %}
-
-    {% set webringTheme = 'tron' %}
-    <h4 class="margin-block-start-xxxl fsv-5">Tron</h4>
-    {% set webringScheme = 'light' %}
-    {% include "ui/widget.njk" %}
-    {% set webringScheme = 'dark' %}
-    {% include "ui/widget.njk" %}
-
-    {% set webringTheme = 'coder' %}
-    <h4 class="margin-block-start-xxxl fsv-5">Coder</h4>
-    {% set webringScheme = 'light' %}
-    {% include "ui/widget.njk" %}
-    {% set webringScheme = 'dark' %}
-    {% include "ui/widget.njk" %}
-
-    {% set webringTheme = 'bading' %}
-    <h4 class="margin-block-start-xxxl fsv-5">Bading</h4>
-    {% set webringScheme = 'light' %}
-    {% include "ui/widget.njk" %}
-    {% set webringScheme = 'dark' %}
-    {% include "ui/widget.njk" %}
-
-    {% set webringTheme = 'trans' %}
-    <h4 class="margin-block-start-xxxl fsv-5">Trans</h4>
-    {% set webringScheme = 'light' %}
-    {% include "ui/widget.njk" %}
-    {% set webringScheme = 'dark' %}
-    {% include "ui/widget.njk" %}
-
-    {% set webringTheme = 'plantlike' %}
-    <h4 class="margin-block-start-xxxl fsv-5">Plantlike</h4>
-    {% set webringScheme = 'light' %}
-    {% include "ui/widget.njk" %}
-    {% set webringScheme = 'dark' %}
-    {% include "ui/widget.njk" %}
-
-    {% set webringTheme = 'borderline' %}
-    <h4 class="margin-block-start-xxxl fsv-5">Borderline</h4>
-    {% set webringScheme = 'light' %}
-    {% include "ui/widget.njk" %}
-    {% set webringScheme = 'dark' %}
-    {% include "ui/widget.njk" %}
-    </div>
-  </details>
-
-  <h2 class="fsv-4 text-rose-3">Create your own webring!</h2>
-  <p>If you want to start your own webring, fork <a href="{{ site.repository }}">this project</a> on Github and follow the instructions in the README.</p>
-
-  <a href="{{ site.repository }}" class="primary button">
-    {{ icon('github') }}
+      <a href="{{ site.repository }}" class="primary button">
+        {{ icon('github') }}
     Fork on Github
   </a>
-</div>
+    </div>
