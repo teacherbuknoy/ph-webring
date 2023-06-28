@@ -6,15 +6,14 @@ Inspired by [Tatiana Mac's tweet](https://twitter.com/TatianaTMac/status/1114388
 ## Features
 - Admins manage the ring on Github
 - Members are defined in `src/data/members.json`
-- Publish an index of all members' RSS feeds
-
-### Roadmap
 - Let people add their site through pull request or submit via email form
-- Publish a code of conduct
+- Publish an index of all members' RSS feeds
 - Provide an embed code that renders a banner
   - Web component
-  - `iFrame` for when JS is disabled
   - Plain HTML + CSS
+
+### Roadmap
+- Publish a code of conduct
 - Show an SVG map of the ring and its members
 - Extract info out of the member's links via indieweb
 
