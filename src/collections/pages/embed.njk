@@ -10,6 +10,8 @@ function getTheme(name = '') {
       return `{% include "embed/styles/serif.njk" %}`
     case 'tron':
       return `{% include "embed/styles/tron.njk" %}`
+    case 'coder':
+      return `{% include "embed/styles/coder.njk" %}`
     default:
       return `{% include "embed/styles/default.njk" %}`
   }
@@ -59,7 +61,6 @@ class WebringBanner extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log('[ATTRIBUTE CHANGE]', name, oldValue, newValue)
     this.refreshAttributes()
     this.render()
   }
@@ -77,7 +78,6 @@ class WebringBanner extends HTMLElement {
       ? theme
       : ''
 
-    console.log({ scheme, theme })
   }
 }
 
