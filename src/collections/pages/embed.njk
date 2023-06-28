@@ -59,22 +59,25 @@ class WebringBanner extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
+    console.log('[ATTRIBUTE CHANGE]', name, oldValue, newValue)
     this.refreshAttributes()
     this.render()
   }
 
   refreshAttributes() {
-      const scheme = this.getAttribute('scheme')
-      const schemeIsValid = WebringBanner.SCHEMES.includes(scheme)
-      this.scheme =  scheme !=  null && schemeIsValid
-        ? scheme
-        : 'light'
+    const scheme = this.getAttribute('scheme')
+    const schemeIsValid = WebringBanner.SCHEMES.includes(scheme)
+    this.scheme =  scheme !=  null && schemeIsValid
+      ? scheme
+      : ''
 
-      const theme = this.getAttribute('theme')
-      const themeIsValid = WebringBanner.THEMES.includes(theme)
-      this.theme = theme != null && themeIsValid
-        ? theme
-        : ''
+    const theme = this.getAttribute('theme')
+    const themeIsValid = WebringBanner.THEMES.includes(theme)
+    this.theme = theme != null && themeIsValid
+      ? theme
+      : ''
+
+    console.log({ scheme, theme })
   }
 }
 
