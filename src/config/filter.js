@@ -1,3 +1,13 @@
+const markdownIt = require('markdown-it')
+
+const md = markdownIt({ html: true, linkify: true, typographer: true })
+  .use(require('markdown-it-deflist'))
+  .use(require('markdown-it-abbr'))
+  .use(require('markdown-it-footnote'))
+  .use(require('markdown-it-attrs'))
+  .use(require('markdown-it-sup'))
+  .disable('code')
+
 module.exports = {
   markdown: function (value) {
     let markdown = require('markdown-it')({ html: true })
@@ -13,5 +23,6 @@ module.exports = {
   },
   machineReadableDate: function (value) {
     return new Date(value).toISOString()
-  }
+  },
+  markdown: string => md.render(string)
 }

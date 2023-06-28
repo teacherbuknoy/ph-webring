@@ -8,12 +8,15 @@
 	}
 
 	&__trigger {
-		background-color: hsl(var(--rose-2) / 50%);
+		background-color: hsl(var(--rose-2));
 		color           : hsl(var(--rose-5));
+		cursor          : pointer;
 		font-family     : var(--font-serif);
 		font-size       : var(--fsv-6);
 		font-weight     : bold;
-		cursor          : pointer
+		position        : sticky;
+		top             : 0;
+		z-index         : 9;
 	}
 
 	&__body {

@@ -49,7 +49,10 @@ eleventyComputed:
   <details class="reveal">
     <summary class="reveal__trigger">For developers</summary>
     <div class="reveal__body">
-      <p>The <code>&lt;webring-banner /></code> component has an attribute called `scheme` that says which color scheme to use, which can either be `light` or `dark`. If it's not provided, the component follows the system color scheme. The following is an example of the banner with dark color scheme</p>
+      {% set strRender %}
+        The <code>&lt;webring-banner /></code> component has an attribute called `scheme` that says which color scheme to use, which can either be `light` or `dark`. If it's not provided, the component follows the system color scheme. The following is an example of the banner with dark color scheme.
+      {% endset %}
+      {{ strRender | markdown | safe }}
       {% set webringScheme = 'dark' %}
       {% set webringTheme = 'serif' %}
       <div class="fsv-6">{% highlight "html" %}{% include "ui/widget.njk" %}{% endhighlight %}</div>
