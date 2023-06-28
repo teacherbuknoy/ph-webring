@@ -26,18 +26,8 @@ class WebringBanner extends HTMLElement {
       this.url = '{{ site.baseUrl }}';
       this.image = this.url + '/assets/images/{{ site.image }}';
       this.membercount = {{ members | length}};
-      
-      const scheme = this.getAttribute('scheme')
-      const schemeIsValid = WebringBanner.SCHEMES.includes(scheme)
-      this.scheme =  scheme !=  null && schemeIsValid
-        ? scheme
-        : 'light'
 
-      const theme = this.getAttribute('theme')
-      const themeIsValid = WebringBanner.THEMES.includes(theme)
-      this.theme = theme != null && themeIsValid
-        ? theme
-        : ''
+      this.refreshAttributes()
 
       this.shadowObj = this.attachShadow({ mode: 'open' });
       this.render();
@@ -49,22 +39,42 @@ class WebringBanner extends HTMLElement {
     console.log(this.theme)
     
     return `
-      <style>
-        ${baseStyle}
-        ${theme}
-      </style>
+      <style>${baseStyle} ${theme}</style>
     `;
   }
 
   getTemplate() {
       return `
         ${this.getStyles()}
-        {% include "embed/webring-banner.njk" %}  
-      `;
+        {% include "embed/webring-banner.njk" %}
+`;
   }
 
   render() {
       this.shadowObj.innerHTML = this.getTemplate();
+  }
+
+  static get observedAttributes() {
+    return ['scheme', 'theme']
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    this.refreshAttributes()
+    this.render()
+  }
+
+  refreshAttributes() {
+      const scheme = this.getAttribute('scheme')
+      const schemeIsValid = WebringBanner.SCHEMES.includes(scheme)
+      this.scheme =  scheme !=  null && schemeIsValid
+        ? scheme
+        : 'light'
+
+      const theme = this.getAttribute('theme')
+      const themeIsValid = WebringBanner.THEMES.includes(theme)
+      this.theme = theme != null && themeIsValid
+        ? theme
+        : ''
   }
 }
 
