@@ -141,10 +141,10 @@ category: global
   $space : 1rem;
   --space: #{$space};
 
-  --space-xxxl: #{$space * 2};
-  --space-xxl : #{$space * 1.75};
-  --space-xl  : #{$space * 1.5};
-  --space-l   : #{$space * 1.25};
+  --space-xxxl: #{$space * 3};
+  --space-xxl : #{$space * 2.5};
+  --space-xl  : #{$space * 2};
+  --space-l   : #{$space * 1.5};
   --space-m   : #{$space * 1};
   --space-s   : #{$space * 0.75};
   --space-xs  : #{$space * 0.5};
