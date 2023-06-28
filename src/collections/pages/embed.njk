@@ -36,6 +36,10 @@ class WebringBanner extends HTMLElement {
       this.url = '{{ meta.baseUrl }}';
       this.image = this.url + '/assets/images/{{ site.image }}';
       this.membercount = {{ members | length}};
+      
+      this.memberlabel = new Intl.PluralRules('en-US').select(this.membercount) === 'one'
+        ? 'member'
+        : 'members'
 
       this.refreshAttributes()
 
