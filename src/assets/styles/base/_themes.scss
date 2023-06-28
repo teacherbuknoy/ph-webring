@@ -19,7 +19,7 @@
 
 body {
   font-family     : var(--font-sans);
-  background-color: hsl(var(--bg-2));
+  background-color: hsl(var(--bg-1));
   color           : hsl(var(--fg-2));
 }
 
@@ -70,6 +70,19 @@ blockquote {
   position  : relative;
   margin-top: var(--space-xxxl);
 
+  &::before {
+    content    : "“";
+    color      : hsl(var(--rose-1));
+    font-family: var(--font-serif);
+    font-size  : calc(var(--fs-1)*2);
+    left       : 0;
+    line-height: 0;
+    position   : absolute;
+    top        : 0;
+    transform  : translateX(-50%) translateY(0.5ch);
+    z-index    : -1;
+  }
+
   p {
     font-family            : var(--font-serif);
     font-variation-settings: 'wght'350;
@@ -86,19 +99,6 @@ blockquote {
     &::before {
       content: '— ';
     }
-  }
-
-  &::before {
-    content    : "“";
-    color      : hsl(var(--light-5));
-    font-family: var(--font-serif);
-    font-size  : calc(var(--fs-1)*2);
-    left       : 0;
-    line-height: 0;
-    position   : absolute;
-    top        : 0;
-    transform  : translateX(-50%) translateY(0.5ch);
-    z-index    : -1;
   }
 }
 
