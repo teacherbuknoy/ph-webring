@@ -18,6 +18,8 @@ function getTheme(name = '') {
       return `{% include "embed/styles/trans.njk" %}`
     case 'plantlike':
       return `{% include "embed/styles/plantlike.njk" %}`
+    case 'borderline':
+      return `{% include "embed/styles/borderline.njk" %}`
     default:
       return `{% include "embed/styles/default.njk" %}`
   }

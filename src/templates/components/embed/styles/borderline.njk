@@ -1,0 +1,37 @@
+.webring-banner,
+.webring-banner.scheme-light {
+  --webring-font        : Merriweather, Times New Roman, serif;
+  --webring-heading-font: Arial, sans-serif;
+  --webring-button-font : Arial, sans-serif;
+
+  --webring-bg        : 0 0% 98%;
+  --webring-fg        : 0 0% 20%;
+  --webring-body-color: 0 0% 20%;
+  --webring-accent-1  : 0 0% 20%;
+  --webring-accent-2  : 0 0% 20%;
+  --webring-shadow-color: 0 0% 10%;
+}
+
+.webring-banner.scheme-dark {
+  --webring-bg        : 0 0% 20%;
+  --webring-fg        : 0 0% 98%;
+  --webring-body-color: 0 0% 98%;
+  --webring-accent-1  : 0 0% 98%;
+  --webring-accent-2  : 0 0% 98%;
+  --webring-shadow-alpha: 10%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .webring-banner {
+    --webring-bg        : 0 0% 20%;
+    --webring-fg        : 0 0% 98%;
+    --webring-body-color: 0 0% 98%;
+    --webring-accent-1  : 0 0% 98%;
+    --webring-accent-2  : 0 0% 98%;
+  }
+}
+
+.webring-banner,
+.webring-banner__link {
+  border-radius: 0;
+}
