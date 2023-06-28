@@ -33,7 +33,7 @@ class WebringBanner extends HTMLElement {
       super();
 
       this.ringtitle = '{{ site.title }}';
-      this.url = '{{ site.baseUrl }}';
+      this.url = '{{ meta.baseUrl }}';
       this.image = this.url + '/assets/images/{{ site.image }}';
       this.membercount = {{ members | length}};
 

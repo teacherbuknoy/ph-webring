@@ -12,16 +12,16 @@
   </div>
   <p class="webring-banner__links">
     <a href="${this.url}/previous" class="webring-banner__link webring-banner__link--prev" aria-label="Go to previous site">
-      {{ icon(name = 'chevron-left', baseUrl = site.baseUrl) }}
+      {{ icon(name = 'chevron-left', baseUrl = meta.baseUrl) }}
       Previous
     </a>
     <a href="${this.url}/random" class="webring-banner__link webring-banner__link--random" aria-label="Go to a random site">
-      {{ icon(name = 'shuffle', baseUrl = site.baseUrl) }}
+      {{ icon(name = 'shuffle', baseUrl = meta.baseUrl) }}
       Random
     </a>
     <a href="${this.url}/next" class="webring-banner__link webring-banner__link--next" aria-label="Go to next site">
       Next
-      {{ icon(name = 'chevron-right', baseUrl = site.baseUrl) }}
+      {{ icon(name = 'chevron-right', baseUrl = meta.baseUrl) }}
     </a>
   </p>
 </div>

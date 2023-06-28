@@ -1,5 +1,5 @@
 {% macro icon(name, class, baseUrl) %}
-  {{ site.baseUrl }}
+  {{ meta.baseUrl }}
   <svg class="feathericon {{ class }}" aria-hidden="true">
     <use href="{{ baseUrl }}/assets/images/feather-sprite.svg#{{ name }}"/>
   </svg>
