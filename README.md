@@ -3,6 +3,8 @@ A webring of Filipino people with blogs.
 
 Inspired by [Tatiana Mac's tweet](https://twitter.com/TatianaTMac/status/1114388079630929926) and [this post from Max Boeck](https://mxb.dev/blog/webring-kit/)
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md) [![Netlify Status](https://api.netlify.com/api/v1/badges/ef1bcf27-9a63-4bad-bc3d-0ebddced851e/deploy-status)](https://app.netlify.com/sites/ph-webring/deploys)
+
 ## Features
 - Admins manage the ring on Github
 - Members are defined in `src/data/members.json`
