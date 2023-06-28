@@ -11,6 +11,11 @@
     Referrer-Policy = "no-referrer-when-downgrade"
     Access-Control-Allow-Origin = "*"
 
+[[headers]]
+  for = "/assets/images/feather-sprite.svg"
+  [headers.values]
+    Content-Type = 'image/svg+xml'
+
 [[redirects]]
   from = "/next"
   to = "/.netlify/functions/next"
