@@ -1,0 +1,38 @@
+.webring-banner,
+.webring-banner.scheme-light {
+  --webring-font        : 'Alegreya', Times New Roman, serif;
+  --webring-heading-font: 'Alegreya', Times New Roman, serif;
+  --webring-button-font : 'Alegreya Sans', Times New Roman, serif;
+
+  --webring-bg        : 45 24% 93%;
+  --webring-fg        : 188 95% 14%;
+  --webring-body-color: 188 95% 14%;
+  --webring-accent-1  : 188 95% 14%;
+  --webring-accent-2  : 188 95% 14%;
+  --webring-shadow-color: 188 95% 14%
+}
+
+.webring-banner.scheme-dark {
+  --webring-bg        : 188 95% 14%;
+  --webring-fg        : 45 24% 93%;
+  --webring-body-color: 45 24% 93%;
+  --webring-accent-1  : 45 24% 93%;
+  --webring-accent-2  : 45 24% 93%;
+  --webring-shadow-alpha: 10%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .webring-banner {
+    --webring-bg        : 188 95% 14%;
+    --webring-fg        : 45 24% 93%;
+    --webring-body-color: 45 24% 93%;
+    --webring-accent-1  : 45 24% 93%;
+    --webring-accent-2  : 45 24% 93%;
+    --webring-shadow-alpha: 10%;
+  }
+}
+
+.webring-banner,
+.webring-banner__link {
+  border-radius: 0;
+}
