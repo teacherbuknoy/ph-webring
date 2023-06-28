@@ -4,4 +4,6 @@
     <a href="{{ site.baseUrl }}/random">Random</a>
     <a href="{{ site.baseUrl }}/next">Next</a>
 </webring-banner>
-<script async src="{{ site.baseUrl }}/embed.js" charset="utf-8"></script>
+{% if not excludeScript %}
+    <script async src="{{ site.baseUrl }}/embed.js" charset="utf-8"></script>
+{% endif %}
