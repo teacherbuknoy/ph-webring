@@ -14,6 +14,8 @@ function getTheme(name = '') {
       return `{% include "embed/styles/coder.njk" %}`
     case 'bading':
       return `{% include "embed/styles/bading.njk" %}`
+    case 'trans':
+      return `{% include "embed/styles/trans.njk" %}`
     default:
       return `{% include "embed/styles/default.njk" %}`
   }

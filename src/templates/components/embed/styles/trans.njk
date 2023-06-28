@@ -1,0 +1,64 @@
+.webring-banner,
+.webring-banner.scheme-light {
+  --webring-font        : Figtree, Arial, Helvetica, system-ui, sans-serif;
+  --webring-heading-font: Figtree, Arial, Helvetica, system-ui, sans-serif;
+  --webring-button-font : Figtree, Arial, Helvetica, system-ui, sans-serif;
+
+  --webring-bg          : 0 0% 98%;
+  --webring-fg          : 0 0% 20%;
+  --webring-body-color  : 0 0% 20%;
+  --webring-accent-1    : 343 60% 48%;
+  --webring-accent-2    : 343 100% 68%;
+  --webring-shadow-color: var(--webring-fg);
+}
+
+.webring-banner.scheme-dark {
+  --webring-bg          : 0 0% 20%;
+  --webring-fg          : 0 0% 98%;
+  --webring-body-color  : 0 0% 98%;
+  --webring-accent-1    : 343 100% 68%;
+  --webring-accent-2    : 343 100% 78%;
+  --webring-shadow-color: 0 0% 10%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .webring-banner {
+    --webring-bg          : 0 0% 20%;
+    --webring-fg          : 0 0% 98%;
+    --webring-body-color  : 0 0% 98%;
+    --webring-accent-1    : 343 100% 68%;
+    --webring-accent-2    : 343 100% 78%;
+    --webring-shadow-color: 0 0% 10%;
+  }
+}
+
+.webring-banner {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden
+}
+
+.webring-banner::before {
+  content: '';
+  width: 100%;
+  height: 1ch;
+
+  --color-count: 5;
+  --color-1: #00dcff;
+  --color-2: #ffb7d4;
+  --color-3: #ffffff;
+  --color-4: #ffb7d4;
+  --color-5: #00dcff;
+
+  background-image: linear-gradient(
+    to right,
+    var(--color-1) calc((100% / var(--color-count)) * 1),
+    var(--color-2) calc((100% / var(--color-count)) * 1),
+    var(--color-2) calc((100% / var(--color-count)) * 2),
+    var(--color-3) calc((100% / var(--color-count)) * 2),
+    var(--color-3) calc((100% / var(--color-count)) * 3),
+    var(--color-4) calc((100% / var(--color-count)) * 3),
+    var(--color-4) calc((100% / var(--color-count)) * 4),
+    var(--color-5) calc((100% / var(--color-count)) * 4)
+  )
+}
