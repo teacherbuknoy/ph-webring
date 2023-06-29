@@ -40,7 +40,9 @@ export const getRandom = url => {
   const selection = url
     ? members.filter(site => !url.includes(site.url))
     : members
-  
+
+
   const randomIndex = Math.floor(Math.random() * selection.length)
+  console.log({ selection: selection.map(item => item.url), random: selection[randomIndex].url })
   return selection[randomIndex]
 }
