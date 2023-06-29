@@ -29,7 +29,7 @@ export const getPrevious = url => {
   const index = getIndex(url)
   if (index !== -1) {
     const previousIndex = index > 0 ? index - 1 : members.length - 1
-    return members[prevIndex]
+    return members[previousIndex]
   }
 
   console.log('[PREVIOUS] Referrer position not found')
