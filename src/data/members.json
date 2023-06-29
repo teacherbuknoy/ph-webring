@@ -8,5 +8,12 @@
       { "name": "Literature", "url": "https://francisrubio.antaresph.dev/literature.xml" },
       { "name": "Videos", "url": "https://francisrubio.antaresph.dev/videos.xml" }
     ]
+  },
+  {
+    "title": "Nathaniel Tampus",
+    "url": "https://nize.foo/",
+    "feeds": [
+      { "name": "Posts", "url": "https://nize.foo/rss.xml" }
+    ]
   }
 ]
