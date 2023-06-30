@@ -8,19 +8,47 @@
 	}
 
 	&__trigger {
+		align-items     : center;
 		background-color: hsl(var(--rose-2));
 		color           : hsl(var(--rose-5));
 		cursor          : pointer;
+		display         : flex;
 		font-family     : var(--font-serif);
 		font-size       : var(--fsv-6);
 		font-weight     : bold;
+		gap             : 1ch;
+		padding         : var(--space) var(--space-xl);
 		position        : sticky;
 		top             : 0;
 		z-index         : 9;
+
+		&::before {
+			content    : '+';
+			font-family: var(--font-mono);
+
+			@at-root [open] & {
+				content: '-';
+			}
+		}
+
+		&::after {
+			content            : '[Select to open] ';
+			font-family        : var(--font-sans);
+			font-weight        : normal;
+			text-transform     : uppercase;
+			font-size          : var(--fs-8);
+			letter-spacing     : 1px;
+			order              : 2;
+			margin-inline-start: auto;
+
+			@at-root [open] & {
+				content: '[Select to close]';
+			}
+		}
 	}
 
 	&__body {
-		background-color  : hsl(var(--rose-1) / 0%);
+		background-color  : hsl(var(--bg-1));
 		display           : flex;
 		flex-direction    : column;
 		gap               : var(--space);

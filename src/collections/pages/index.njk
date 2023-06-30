@@ -48,20 +48,15 @@ eleventyComputed:
     <li>The website you own is safe for work (no porn, gore, anything people browsing in public will be embarrassed about)</li>
   </ul>
 
-  <h2 class="fsv-4 text-rose-3">How to join</h2>
+  <h2 class="fsv-4 text-rose-3" id="join-pinoy-bloggers">How to join</h2>
   <details class="reveal">
-    <summary class="reveal__trigger">If you're a developer…</summary>
+    <summary class="reveal__trigger">Devs, look here!</summary>
     <div class="reveal__body">
       {% include "ui/instructions-dev.njk" %}
     </div>
   </details>
 
-  <details class="reveal" id="join-pinoy-bloggers">
-    <summary class="reveal__trigger">If you're <em>not</em> a developer…</summary>
-    <div class="reveal__body">
-      {% include "ui/instructions-not-dev.njk" %}
-    </div>
-  </details>
+  {% include "ui/instructions-not-dev.njk" %}
 
   <h2 class="fsv-4 text-rose-3" id="add-banner">Add the banner to your website</h2>
   <p>Once you're in the members list, add this widget anywhere in your site, preferrably somewhere that will be easily seen.</p>
@@ -70,39 +65,33 @@ eleventyComputed:
   <p>It will render this banner that links to the other members:</p>
   {% include "ui/widget.njk" %}
 
-  <details class="reveal">
-    <summary class="reveal__trigger">Color Schemes (a.k.a Dark and Light Modes)</summary>
-    <div class="reveal__body">
-      <div class="fsv-6">
-        {% set renderStr %}
+  <h3 class="fsv-5 text-rose-3">Color Schemes (a.k.a Dark and Light Modes)</h3>
+  <div class="fsv-6">
+    {% set renderStr %}
       The widget supports different color themes and both light and dark color schemes for each theme.
 
       Add a `scheme` attribute to the `<webring-banner/>` element that is either `light` or `dark` to force a color scheme for the widget. If this attribute is not set, the widget will follow the system color scheme.
     {% endset %}
-        {{ renderStr | markdown | safe }}
-        {% highlight "html" %}{% include "docs/color-scheme-example.njk" %}{% endhighlight %}
-        {% include "docs/color-scheme.njk" %}
-      </div>
-    </div>
-  </details>
+    {{ renderStr | markdown | safe }}
+    {% highlight "html" %}{% include "docs/color-scheme-example.njk" %}{% endhighlight %}
+    {% include "docs/color-scheme.njk" %}
+  </div>
 
-  <details class="reveal">
-    <summary class="reveal__trigger">Themes</summary>
-    <div class="reveal__body fsv-6">
-      {% set renderStr %}
-        The `<webring-banner>` also supports multiple themes. Every theme has a light and dark mode. To use a theme, add a `theme` attribute to the `<webring-banner>` element and set it to one of the following values.
+  <h3 class="fsv-5 text-rose-3">Themes</h3>
+  <div class="fsv-6">
+    {% set renderStr %}
+        The `<webring-banner/>` also supports multiple themes. Every theme has a light and dark mode. To use a theme, add a `theme` attribute to the `<webring-banner>` element and set it to one of the following values.
       {% endset %}
-          {{ renderStr | markdown | safe }}
-          {% highlight "html" %}{% include "docs/theme-example.njk" %}{% endhighlight %}
-          {% include "docs/theme.njk" %}
-        </div>
-      </details>
+      {{ renderStr | markdown | safe }}
+      {% highlight "html" %}{% include "docs/theme-example.njk" %}{% endhighlight %}
+      {% include "docs/theme.njk" %}
+    </div>
 
-      <h2 class="fsv-4 text-rose-3">Create your own webring!</h2>
-      <p>If you want to start your own webring, fork <a href="{{ site.repository }}">this project</a> on Github and follow the instructions in the README.</p>
+    <h2 class="fsv-4 text-rose-3">Create your own webring!</h2>
+    <p>If you want to start your own webring, fork <a href="{{ site.repository }}">this project</a> on Github and follow the instructions in the README.</p>
 
-      <a href="{{ site.repository }}" class="primary button">
-        {{ icon('github') }}
+    <a href="{{ site.repository }}" class="primary button">
+      {{ icon('github') }}
     Fork on Github
   </a>
-    </div>
+  </div>

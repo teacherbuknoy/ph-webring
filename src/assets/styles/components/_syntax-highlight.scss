@@ -3,6 +3,7 @@ code:not([class]) {
   padding-inline  : 0.25ch;
   border-radius   : var(--radius-2);
   font-size       : 90%;
+  font-family     : var(--font-mono);
 }
 
 .dark {
