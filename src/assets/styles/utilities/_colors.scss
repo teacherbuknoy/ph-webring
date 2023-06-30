@@ -11,3 +11,19 @@ $level-end: 5;
     }
   }
 }
+
+.bg {
+  @each $color in $colors {
+    @for $level from $level-start through $level-end {
+      &-#{$color}-#{$level} {
+        background-color: hsl(var(--#{$color}-#{$level}));
+      }
+    }
+  }
+
+  @for $level from $level-start through $level-end {
+    &-#{$level} {
+      background-color: hsl(var(--bg-#{$level}));
+    }
+  }
+}

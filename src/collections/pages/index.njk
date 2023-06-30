@@ -11,22 +11,27 @@ eleventyComputed:
   <p>{{ site.description }}</p>
   <p class="fs-7">Your website can be about anything. It can be your online portfolio, or be about design, development, architecture, medicine, cross-stitching, knitting, puzzles, travelling—anything (but only safe for work)!</p>
 
-  <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} member)</small>
-  </h2>
-  {% for member in members %}
-    {% unfurl member.url %}
-  {% endfor %}
+</div>
+<div class="bg-3 padding-block-m">
+  <div class="section container-s margin-inline-auto margin-block-end-xxxl">
+    <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} member)</small>
+    </h2>
+    {% for member in members %}
+      {% unfurl member.url %}
+    {% endfor %}
 
-  <div class="margin-block-xxl">
-    <a href="/feeds.xml" class="primary button">
-      {{ icon('rss') }}
-      Subscribe to all members' RSS feeds
-    </a>
-    <a href="/feeds.xml" class="button" target="_blank">
-      What's an RSS feed?
-    </a>
+    <div class="margin-block-xxl" style="display: flex; flex-wrap: wrap; gap: 1ch;">
+      <a href="/feeds.xml" class="primary button">
+        {{ icon('rss') }}
+        Subscribe to all members' RSS feeds
+      </a>
+      <a href="/feeds.xml" class="button" target="_blank">
+        What's an RSS feed?
+      </a>
+    </div>
   </div>
-
+</div>
+<div class="section container-s margin-inline-auto margin-block-end-xxxl">
   <h2 class="fsv-4 text-rose-3">What's this?</h2>
   <blockquote>
     <p>A community of sites around a common topic, also known as a webring. Each member includes a badge on their site that links to the previous and next sites in the ring. Kids in the 90s used to love it!</p>
