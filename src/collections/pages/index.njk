@@ -14,7 +14,7 @@ eleventyComputed:
 </div>
 <div class="bg-3 padding-block-m">
   <div class="section container-s margin-inline-auto margin-block-end-xxxl">
-    <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} member)</small>
+    <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} members)</small>
     </h2>
     {% for member in members %}
       {% set memberSeo = member.url | seo %}
