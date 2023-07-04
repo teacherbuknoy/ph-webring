@@ -31,18 +31,20 @@
 			}
 		}
 
-		&::after {
-			content            : '[Select to open] ';
-			font-family        : var(--font-sans);
-			font-weight        : normal;
-			text-transform     : uppercase;
-			font-size          : var(--fs-8);
-			letter-spacing     : 1px;
-			order              : 2;
-			margin-inline-start: auto;
+		@media (min-width: 481px) {
+			&::after {
+				content            : '[Select to open] ';
+				font-family        : var(--font-sans);
+				font-weight        : normal;
+				text-transform     : uppercase;
+				font-size          : var(--fs-8);
+				letter-spacing     : 1px;
+				order              : 2;
+				margin-inline-start: auto;
 
-			@at-root [open] & {
-				content: '[Select to close]';
+				@at-root [open] & {
+					content: '[Select to close]';
+				}
 			}
 		}
 	}
