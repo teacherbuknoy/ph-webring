@@ -22,5 +22,12 @@
     "feeds": [
       { "name": "Daryl Sun's Journal", "url": "https://blog.darylsun.page/rss.xml" }
     ]
+  },
+  {
+    "title": "ramblings of @harudagondi",
+    "url": "https://harudagondi.vercel.app/",
+    "feeds": [
+      { "name": "Blog", "url": "https://harudagondi.vercel.app/blog.xml" }
+    ]
   }
 ]
