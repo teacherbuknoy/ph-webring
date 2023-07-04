@@ -17,7 +17,19 @@ eleventyComputed:
     <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} member)</small>
     </h2>
     {% for member in members %}
-      {% unfurl member.url %}
+      {% set memberSeo = member.url | seo %}
+      {% set info = memberSeo.data %}
+      <article class="unfurl">
+        <h4 class="unfurl__heading">
+          <a class="unfurl__link" href="{{ member.url }}">{{ member.title | safe }}</a>
+        </h4>
+        <img class="unfurl__image" src="{{ info.image.url }}" alt="" width="{{ info.image.width }}" height="{{ info.image.height }}">
+        <p class="unfurl__description">{{ info.description }}</p>
+        <small class="unfurl__meta">
+          <img class="unfurl__logo" src="{{ info.logo.url }}" alt="" width="{{ info.logo.width }}" height="{{ info.logo.height }}">
+          <span class="unfurl__publisher">{{ info.publisher }}</span>
+        </small>
+      </article>
     {% endfor %}
 
     <div class="margin-block-xxl" style="display: flex; flex-wrap: wrap; gap: 1ch;">

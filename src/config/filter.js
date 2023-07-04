@@ -1,4 +1,5 @@
 const markdownIt = require('markdown-it')
+const fetch = require('@11ty/eleventy-fetch')
 
 const md = markdownIt({ html: true, linkify: true, typographer: true })
   .use(require('markdown-it-deflist'))
@@ -24,5 +25,15 @@ module.exports = {
   machineReadableDate: function (value) {
     return new Date(value).toISOString()
   },
-  markdown: string => md.render(string)
+  markdown: string => md.render(string),
+  seo: async url => {
+    const endpoint = new URL('https://api.microlink.io/')
+    endpoint.searchParams.append('url', url)
+    endpoint.searchParams.append('palette', true)
+    endpoint.searchParams.append('audio', true)
+    endpoint.searchParams.append('video', true)
+    endpoint.searchParams.append('iframe', true)
+
+    return await fetch(endpoint.toString(), { duration: '1d', type: 'json' })
+  }
 }
