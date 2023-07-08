@@ -29,5 +29,12 @@
     "feeds": [
       { "name": "Blog", "url": "https://harudagondi.vercel.app/blog.xml" }
     ]
+  },
+  {
+    "title": "tedmagaoay",
+    "url": "https://tedmagaoay.com/",
+    "feeds": [
+      { "name": "Home on tedmagaoay", "url": "https://tedmagaoay.com/index.xml" }
+    ]
   }
 ]
