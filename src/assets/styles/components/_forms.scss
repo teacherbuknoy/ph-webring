@@ -36,6 +36,12 @@
   font-size  : var(--fs-7);
 }
 
+.form-description {
+  margin   : 0;
+  font-size: var(--fs-8);
+  opacity  : 0.85;
+}
+
 .form-input {
   background-color: hsl(var(--bg-2));
   border          : 1px solid hsl(var(--bg-5));
