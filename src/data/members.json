@@ -42,7 +42,21 @@
     "url": "https://fizzsea.neocities.org/"
   },
   {
-    "title": "leanne ♥",
-    "url": "https://leanneu.neocities.org"
+    "title": "Twansgendew",
+    "url": "https://twansgendew.net"
+  },
+  {
+    "title": "Biyori Cafe",
+    "url": "https://biyori.cafe"
+  },
+  {
+    "title": "to oblique lair",
+    "url": "https://ohio.araw.xyz",
+    "feeds": [
+      {
+        "name": "a log on somersaulting",
+        "url": "https://ohio.araw.xyz/log/index.xml"
+      }
+    ]
   }
 ]
