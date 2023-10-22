@@ -58,5 +58,15 @@
         "url": "https://ohio.araw.xyz/log/index.xml"
       }
     ]
+  },
+  {
+    "title": "Jared Dantis",
+    "url": "https://dantis.me",
+    "feeds": [
+      {
+        "name": "jared's thought dump",
+        "url": "https://thoughts.dantis.me/rss/"
+      }
+    ]
   }
 ]
