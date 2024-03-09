@@ -68,5 +68,12 @@
         "url": "https://thoughts.dantis.me/rss/"
       }
     ]
-  }
+  },
+  {
+    "title": "Kidlat News",
+    "url": "https://kidl.at/",
+    "feeds": [
+      { "name": "Everything", "url": "https://kidl.at/index.xml" }
+    ]
+ }
 ]
