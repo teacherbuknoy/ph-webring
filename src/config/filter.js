@@ -1,17 +1,23 @@
-const markdownIt = require('markdown-it')
-const fetch = require('@11ty/eleventy-fetch')
+import markdownIt from 'markdown-it'
+import fetch from '@11ty/eleventy-fetch'
+
+import deflist from 'markdown-it-deflist'
+import abbr from 'markdown-it-abbr'
+import footnote from 'markdown-it-footnote'
+import attrs from 'markdown-it-attrs'
+import sup from 'markdown-it-sup'
 
 const md = markdownIt({ html: true, linkify: true, typographer: true })
-  .use(require('markdown-it-deflist'))
-  .use(require('markdown-it-abbr'))
-  .use(require('markdown-it-footnote'))
-  .use(require('markdown-it-attrs'))
-  .use(require('markdown-it-sup'))
+  .use(deflist)
+  .use(abbr)
+  .use(footnote)
+  .use(attrs)
+  .use(sup)
   .disable('code')
 
-module.exports = {
+export default {
   markdown: function (value) {
-    let markdown = require('markdown-it')({ html: true })
+    let markdown = markdownIt({ html: true })
 
     return markdown.render(value)
   },

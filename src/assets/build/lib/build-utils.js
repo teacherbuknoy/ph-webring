@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 function getAllowedFiles(extension, basepath) {
   const filenames = fs.readdirSync(basepath, { withFileTypes: true })
@@ -39,4 +39,4 @@ function getStylesheets(basepath) {
   return files
 }
 
-module.exports = { getScripts, getStylesheets }
+export default { getScripts, getStylesheets }

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   pages: function (collections) {
     return collections.getFilteredByGlob([
       "src/collections/pages/*.html",

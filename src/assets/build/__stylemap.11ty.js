@@ -1,7 +1,8 @@
-const path = require('path')
-const sass = require('sass')
-const utils = require('./lib/build-utils')
+import path from 'path'
+import sass from 'sass'
+import utils from './lib/build-utils.js'
 
+const __dirname = import.meta.dirname
 
 class StylesheetSourcemap {
   constructor() {
@@ -40,4 +41,4 @@ class StylesheetSourcemap {
   }
 }
 
-module.exports = StylesheetSourcemap
+export default StylesheetSourcemap

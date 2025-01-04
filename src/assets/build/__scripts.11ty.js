@@ -1,9 +1,11 @@
-const fs = require('fs')
-const path = require('path')
-const utils = require('./lib/build-utils')
-const webpack = require('webpack')
-const { fs: mfs } = require('memfs')
+import fs from 'fs'
+import path from 'path'
+import utils from './lib/build-utils.js'
+import webpack from 'webpack'
+import memfs from 'memfs'
+
 const isProd = process.env.ELEVENTY_ENV === 'production'
+const __dirname = import.meta.dirname
 
 class Script {
   constructor() {
@@ -91,4 +93,4 @@ class Script {
   }
 }
 
-module.exports = Script
+export default Script

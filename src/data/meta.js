@@ -2,6 +2,6 @@ const baseUrl = () => process.env.ELEVENTY_ENV === 'production'
   ? 'https://webring.antaresph.dev'
   : 'http://localhost:8888'
 
-module.exports = () =>{
+export default () => {
   return { baseUrl: baseUrl() }
 }

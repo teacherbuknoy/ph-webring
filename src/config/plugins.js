@@ -1,7 +1,13 @@
-module.exports = {
-  syntaxHighlight: () => ({ plugin: require('@11ty/eleventy-plugin-syntaxhighlight') }),
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import timeToRead from 'eleventy-plugin-time-to-read'
+import toc from 'eleventy-plugin-toc'
+import rss from '@11ty/eleventy-plugin-rss'
+import unfurl from 'eleventy-plugin-unfurl'
+
+export default {
+  syntaxHighlight: () => ({ plugin: syntaxHighlight }),
   timeToRead: () => ({
-    plugin: require('eleventy-plugin-time-to-read'),
+    plugin: timeToRead,
     options: {
       output: data => {
         const includeHours = data.hours != null
@@ -25,12 +31,12 @@ module.exports = {
     }
   }),
   toc: () => ({
-    plugin: require('eleventy-plugin-toc'),
+    plugin: toc,
     options: {
       wrapperClass: 'article__toc sidebar',
       tags: ['h2']
     }
   }),
-  rss: () => ({ plugin: require('@11ty/eleventy-plugin-rss') }),
-  unfurl: () => ({ plugin: require("eleventy-plugin-unfurl") })
+  rss: () => ({ plugin: rss }),
+  unfurl: () => ({ plugin: unfurl })
 }

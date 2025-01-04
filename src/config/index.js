@@ -1,10 +1,10 @@
-const passthrough = require('./passthrough')
-const collections = require('./collections')
-const filters = require('./filter')
-const plugins = require('./plugins')
-const watchtargets = require('./watchtargets')
-const transforms = require('./transforms')
+import passthrough from './passthrough.js'
+import collections from './collections.js'
+import filters from './filter.js'
+import plugins from './plugins.js'
+import watchtargets from './watchtargets.js'
+import transforms from './transforms.js'
 
-module.exports = {
+export default {
   passthrough, collections, filters, plugins, watchtargets, transforms
 }

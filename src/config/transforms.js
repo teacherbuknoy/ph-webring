@@ -1,7 +1,7 @@
-const prettier = require('prettier')
-const path = require('path')
+import prettier from 'prettier'
+import path from 'path'
 
-module.exports = {
+export default {
   prettier: (content, outputPath) => {
     const extname = path.extname(outputPath)
     const config = {

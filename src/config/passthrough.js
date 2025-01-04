@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   root: () => ({ 'src/assets/root': '/' }),
   images: () => ({ 'src/assets/images': 'assets/images' }),
   fonts: () => ({ 'src/assets/fonts': 'assets/fonts' }),

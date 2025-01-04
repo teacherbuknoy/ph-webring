@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Base project for eleventy websites",
   "main": ".eleventy.js",
+  "type": "module",
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
@@ -23,12 +24,15 @@
     "@babel/cli": "^7.22.5",
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
-    "cross-env": "^7.0.3"
+    "@types/node": "^22.10.5",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@11ty/eleventy-upgrade-help": "^3.0.1",
     "@babel/plugin-transform-runtime": "^7.22.5",
     "@prettier/plugin-xml": "^2.2.0",
     "babel-loader": "^9.1.2",

@@ -1,12 +1,15 @@
-const markdown = require('markdown-it')
-const mdAnchor = require('markdown-it-anchor')
-const slug = require('slug')
+import markdown from 'markdown-it'
+import mdAnchor from 'markdown-it-anchor'
 
-const config = require('./src/config/index');
+import deflist from 'markdown-it-deflist'
+import abbr from 'markdown-it-abbr'
+import footnote from 'markdown-it-footnote'
+import attrs from 'markdown-it-attrs'
+
+import config from './src/config/index.js'
 const { passthrough, collections, filters, plugins, watchtargets, transforms } = config
 
-module.exports = function (eleventy) {
-
+export default function (eleventy) {
   Object.keys(passthrough).forEach(key => eleventy.addPassthroughCopy(passthrough[key]()))
   Object.keys(collections).forEach(key => eleventy.addCollection(key, collections[key]))
   Object.keys(filters).forEach(key => eleventy.addFilter(key, filters[key]))
@@ -38,10 +41,10 @@ module.exports = function (eleventy) {
 
   const mdLib = markdown({ html: true, linkify: true, typographer: true })
   mdLib.use(mdAnchor)
-  mdLib.use(require('markdown-it-deflist'))
-  mdLib.use(require('markdown-it-abbr'))
-  mdLib.use(require('markdown-it-footnote'))
-  mdLib.use(require('markdown-it-attrs'))
+  mdLib.use(deflist)
+  mdLib.use(abbr)
+  mdLib.use(footnote)
+  mdLib.use(attrs)
   mdLib.disable('code')
   eleventy.setLibrary('md', mdLib)
   
