@@ -75,5 +75,9 @@
     "feeds": [
       { "name": "Everything", "url": "https://kidl.at/index.xml" }
     ]
- }
+ },
+  {
+    "title": "milkywaydotmoe",
+    "url": "https://milkyway.moe/",
+ } 
 ]
