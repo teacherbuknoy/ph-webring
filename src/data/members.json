@@ -3,38 +3,62 @@
     "title": "Francis Rubio",
     "url": "https://francisrub.io/",
     "feeds": [
-      { "name": "Everything", "url": "https://francisrub.io/feed.xml" },
-      { "name": "Posts", "url": "https://francisrub.io/blog.xml" },
-      { "name": "Literature", "url": "https://francisrub.io/literature.xml" },
-      { "name": "Videos", "url": "https://francisrub.io/videos.xml" }
+      {
+        "name": "Everything",
+        "url": "https://francisrub.io/feed.xml"
+      },
+      {
+        "name": "Posts",
+        "url": "https://francisrub.io/blog.xml"
+      },
+      {
+        "name": "Literature",
+        "url": "https://francisrub.io/literature.xml"
+      },
+      {
+        "name": "Videos",
+        "url": "https://francisrub.io/videos.xml"
+      }
     ]
   },
   {
     "title": "Nathaniel Tampus",
     "url": "https://nize.foo/",
     "feeds": [
-      { "name": "Posts", "url": "https://nize.foo/rss.xml" }
+      {
+        "name": "Posts",
+        "url": "https://nize.foo/rss.xml"
+      }
     ]
   },
   {
     "title": "Daryl Sun's Journal",
     "url": "https://blog.darylsun.page/",
     "feeds": [
-      { "name": "Daryl Sun's Journal", "url": "https://blog.darylsun.page/rss.xml" }
+      {
+        "name": "Daryl Sun's Journal",
+        "url": "https://blog.darylsun.page/rss.xml"
+      }
     ]
   },
   {
     "title": "ramblings of @harudagondi",
     "url": "https://harudagondi.vercel.app/",
     "feeds": [
-      { "name": "Blog", "url": "https://harudagondi.vercel.app/blog.xml" }
+      {
+        "name": "Blog",
+        "url": "https://harudagondi.vercel.app/blog.xml"
+      }
     ]
   },
   {
     "title": "tedmagaoay",
     "url": "https://tedmagaoay.com/",
     "feeds": [
-      { "name": "Home on tedmagaoay", "url": "https://tedmagaoay.com/index.xml" }
+      {
+        "name": "Home on tedmagaoay",
+        "url": "https://tedmagaoay.com/index.xml"
+      }
     ]
   },
   {
@@ -73,11 +97,60 @@
     "title": "Kidlat News",
     "url": "https://kidl.at/",
     "feeds": [
-      { "name": "Everything", "url": "https://kidl.at/index.xml" }
+      {
+        "name": "Everything",
+        "url": "https://kidl.at/index.xml"
+      }
     ]
- },
+  },
   {
     "title": "milkywaydotmoe",
-    "url": "https://milkyway.moe/",
- } 
+    "url": "https://milkyway.moe/"
+  },
+  {
+    "title": "ITEM64",
+    "url": "https://item64.neocities.org"
+  },
+  {
+    "title": "Ryle",
+    "url": "https://carrotshot.ichi.city"
+  },
+  {
+    "title": "Alexis Gaming Reviews",
+    "url": "https://alexisgaming95.neocities.org",
+    "feeds": [
+      {
+        "name": "Alexis Gaming Reviews RSS 2.0 Feed",
+        "url": "https://alexisgaming95.neocities.org/feed.xml"
+      },
+      {
+        "name": "Alexis Gaming Reviews Atom Feed",
+        "url": "https://alexisgaming95.neocities.org/atom.xml"
+      },
+      {
+        "name": "Alexis Gaming Reviews RSS 1.0 Feed",
+        "url": "https://alexisgaming95.neocities.org/rdf.xml"
+      },
+      {
+        "name": "Alexis Gaming Reviews RSS 0.91 Alt Feed",
+        "url": "https://alexisgaming95.neocities.org/netss.xml"
+      },
+      {
+        "name": "Alexis Gaming Reviews RSS 0.91 Feed",
+        "url": "https://alexisgaming95.neocities.org/rss091.xml"
+      }
+    ]
+  },
+  {
+    "title": "wes/via's site",
+    "url": "https://wes-via.nekoweb.org/"
+  },
+  {
+    "title": "𐍐հᨡ֟፝ؖ۬𐑾꫶ࠋꜟৎ",
+    "url": "https://zharlzzz.blogspot.com"
+  },
+  {
+    "title": "Natural Stupidity’s very amazing site",
+    "url": "https://natural-stupidity.neocities.org/"
+  }
 ]
