@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import utils from './lib/build-utils.js'
 import webpack from 'webpack'
-import memfs from 'memfs'
+import mfs from 'memfs'
 
 const isProd = process.env.ELEVENTY_ENV === 'production'
 const __dirname = import.meta.dirname
