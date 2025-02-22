@@ -46,3 +46,27 @@ export const getRandom = url => {
   console.log({ selection: selection.map(item => item.url), random: selection[randomIndex].url })
   return selection[randomIndex]
 }
+
+export const getRandomHero = () => {
+  const selection = [
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/gala-night-2024/10.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/hero.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/gala-night-2024/9.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-1080,f-avif/gallery/gala-night-2024/22.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-1080,f-avif/gallery/gala-night-2024/5.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2024/13.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2024/10.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2024/12.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2024/25.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2024/8.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2024/19.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2023/2.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2023/6.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/gallery/pride-2023/28.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p//gallery/a-studios-shoot-03-26-2023/DSCF0112.JPG',
+    'https://ik.imagekit.io/8jjzxcl9p/DSCF0303.JPG'
+  ]
+
+  const randomIndex = Math.floor(Math.random() * selection.length)
+  return selection[randomIndex]
+}
