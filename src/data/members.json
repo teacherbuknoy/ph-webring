@@ -152,5 +152,15 @@
   {
     "title": "Natural Stupidity’s very amazing site",
     "url": "https://natural-stupidity.neocities.org/"
+  },
+  {
+    "title": "Jay",
+    "url": "https://jay.thedev.id",
+    "feeds": [
+      {
+        "name": "Everything",
+        "url": "https://jay.thedev.id/feed.xml"
+      }
+    ]
   }
 ]
