@@ -49,22 +49,22 @@ export const getRandom = url => {
 
 export const getRandomHero = () => {
   const selection = [
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/gala-night-2024/10.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/hero.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/gala-night-2024/9.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/tr:w-1080,f-avif/gallery/gala-night-2024/22.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/tr:w-1080,f-avif/gallery/gala-night-2024/5.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2024/13.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2024/10.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2024/12.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2024/25.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2024/8.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2024/19.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2023/2.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2023/6.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/gallery/pride-2023/28.jpg',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600//gallery/a-studios-shoot-03-26-2023/DSCF0112.JPG',
-    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600/DSCF0303.JPG'
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/gala-night-2024/10.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/hero.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/gala-night-2024/9.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/gala-night-2024/22.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/gala-night-2024/5.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2024/13.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2024/10.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2024/12.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2024/25.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2024/8.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2024/19.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2023/2.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2023/6.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/pride-2023/28.jpg',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/gallery/a-studios-shoot-03-26-2023/DSCF0112.JPG',
+    'https://ik.imagekit.io/8jjzxcl9p/tr:w-600,f-webp/DSCF0303.JPG'
   ]
 
   const randomIndex = Math.floor(Math.random() * selection.length)
