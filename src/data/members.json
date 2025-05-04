@@ -162,5 +162,15 @@
         "url": "https://jay.thedev.id/feed.xml"
       }
     ]
+  },
+  {
+    "title": "jb's website",
+    "url": "https://jbcarreon123.nekoweb.org",
+    "feeds": [
+      {
+        "name": "Everything",
+        "url": "https://jbcarreon123.nekoweb.org/feed.xml"
+      }
+    ]
   }
 ]
