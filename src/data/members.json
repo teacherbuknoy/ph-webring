@@ -43,11 +43,11 @@
   },
   {
     "title": "ramblings of @harudagondi",
-    "url": "https://harudagondi.vercel.app/",
+    "url": "https://www.harudagondi.space/",
     "feeds": [
       {
         "name": "Blog",
-        "url": "https://harudagondi.vercel.app/blog.xml"
+        "url": "https://www.harudagondi.space/rss.xml"
       }
     ]
   },
