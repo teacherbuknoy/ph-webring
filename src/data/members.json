@@ -23,11 +23,11 @@
   },
   {
     "title": "Nathaniel Tampus",
-    "url": "https://nize.foo/",
+    "url": "https://nize.ph/",
     "feeds": [
       {
         "name": "Posts",
-        "url": "https://nize.foo/rss.xml"
+        "url": "https://nize.ph/rss.xml"
       }
     ]
   },
