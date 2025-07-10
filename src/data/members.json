@@ -172,5 +172,15 @@
         "url": "https://jbcarreon123.nekoweb.org/feed.xml"
       }
     ]
+  },
+  {
+    "title": "stupied",
+    "url": "https://stupied.neocities.org/",
+    "feeds":[
+      {
+        "name": "Stupied RSS Feed!!",
+        "url": "https://stupied.neocities.org/feed.xml"
+      }
+    ]
   }
 ]
