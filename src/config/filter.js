@@ -41,5 +41,13 @@ export default {
     endpoint.searchParams.append('iframe', true)
 
     return await fetch(endpoint.toString(), { duration: '1d', type: 'json' })
+  },
+  isUrlOk: async url => {
+    try {
+      const response = await fetch(url, { fetchOptions: { method: 'HEAD' }, duration: '1h', type: 'text' })
+      return !(response.status >= 200 && response.status < 300)
+    } catch (error) {
+      return false
+    }
   }
 }
