@@ -24,11 +24,32 @@
 }
 
 .unfurl__image {
-  grid-area    : image;
-  align-self   : center;
-  aspect-ratio : 1/1;
-  object-fit   : cover;
-  border-radius: var(--radius-3);
+	grid-area: image;
+  aspect-ratio: 1/1;
+	align-self: center;
+	border-radius: var(--radius-3);
+	justify-self: center;
+  overflow: clip;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0 0 50%);
+	box-shadow: 
+    0 2px 4px hsl(0 0 0 / 5%), 
+    0 4px 8px hsl(0 0 0 / 5%), 
+    0 8px 12px hsl(0 0 0 / 5%), 
+    0 12px 14px hsl(0 0 0 / 5%);
+
+    img {
+      display: block;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+      width: 100%;
+
+      &.pixelated {
+        image-rendering: crisp-edges;
+      }
+    }
 }
 
 .unfurl__heading {

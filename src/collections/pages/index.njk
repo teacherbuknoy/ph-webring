@@ -23,10 +23,18 @@ eleventyComputed:
         <h4 class="unfurl__heading">
           <a class="unfurl__link" href="{{ member.url }}">{{ member.title | safe }}</a>
         </h4>
-        <img class="unfurl__image" src="{{ info.image.url }}" alt="" width="{{ info.image.width }}" height="{{ info.image.height }}">
+        <div class="unfurl__image">
+          {% if info.image.url.length > 0 %}
+            <img class="{{ 'pixelated' if info.image.width < 50 }}" src="{{ info.image.url }}" alt="" width="{{ info.image.width }}" height="{{ info.image.height }}">
+          {% endif %}
+        </div>
         <p class="unfurl__description">{{ info.description }}</p>
         <small class="unfurl__meta">
-          <img class="unfurl__logo" src="{{ info.logo.url }}" alt="" width="{{ info.logo.width }}" height="{{ info.logo.height }}">
+          {% set urlOk = info.logo.url | isUrlOk %}
+          {{ 'URL OK:' + urlOk }}
+          {% if info.logo.url.length > 0 %}
+            <img class="unfurl__logo" src="{{ info.logo.url }}" alt="" width="{{ info.logo.width }}" height="{{ info.logo.height }}">
+          {% endif %}
           <span class="unfurl__publisher">{{ info.publisher }}</span>
         </small>
       </article>
@@ -57,11 +65,12 @@ eleventyComputed:
   <ul>
     <li>You are a Filipino</li>
     <li>You own a website</li>
-    <li>The website you own is safe for work (no porn, gore, anything people browsing in public will be embarrassed about)</li>
+    <li>The website you own is safe for work (no porn, gore, anything people browsing in public will be embarrassed about) <small>swearing on written media is okay :)</small>
+    </li>
     <li>Your site is not homophobic, transphobic, racist, sexist, and a bigot</li>
   </ul>
 
-  <p>If you satisfy these conditions, you're mostly good to join. However, we reserve the right to deny your request to join if we see that your entry is unacceptable.</p>
+  <p>If you satisfy these conditions, you're mostly good to join. However, we reserve the right to deny your request to join if we see that your entry is unacceptable because of other reasons not listed here.</p>
 
   <h2 class="fsv-4 text-rose-3" id="join-pinoy-bloggers">How to join</h2>
   <details class="reveal">
@@ -107,6 +116,7 @@ eleventyComputed:
 
     <a href="{{ site.repository }}" class="primary button">
       {{ icon('github') }}
-    Fork on Github
-  </a>
+      Fork on Github
+    </a>
   </div>
+  <script></script>
