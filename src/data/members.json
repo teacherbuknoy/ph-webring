@@ -165,11 +165,11 @@
   },
   {
     "title": "jb's website",
-    "url": "https://jbcarreon123.nekoweb.org",
+    "url": "https://jbc.lol/",
     "feeds": [
       {
         "name": "Everything",
-        "url": "https://jbcarreon123.nekoweb.org/feed.xml"
+        "url": "https://jbc.lol/feed.xml"
       }
     ]
   },
