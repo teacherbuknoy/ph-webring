@@ -33,7 +33,6 @@ export default {
   },
   markdown: string => md.render(string),
   seo: async url => {
-    console.log('[SEO]', 'Getting metadata for', url)
     const endpoint = new URL('https://api.microlink.io/')
     endpoint.searchParams.append('url', url)
     endpoint.searchParams.append('palette', true)
@@ -43,7 +42,11 @@ export default {
 
     let result = null
 
-    const response = await fetch(endpoint.toString(), { duration: '1d', type: 'json' })
+    const response = await fetch(endpoint.toString(), {
+      duration: '1d',
+      type: 'json',
+      signal: AbortSignal.timeout(10 * 1000)
+    })
       .catch(e => result = {
         date: new Date(),
         url,
@@ -64,6 +67,8 @@ export default {
         iframe: null,
         video: null
       })
+    
+    console.log('[SEO]', 'Metadata fetched for', url, ":", !!response)
     
     if (response != null) {
       result = response
