@@ -32,6 +32,8 @@ eleventyComputed:
         <div class="unfurl__image">
           {% if info.image.url.length > 0 %}
             <img class="{{ 'pixelated' if info.image.width < 50 }}" src="{{ info.image.url }}" alt="" width="{{ info.image.width }}" height="{{ info.image.height }}">
+          {% else %}
+            <img src="/assets/images/gradients/{{ 1 | randomInt(9) }}.png" alt="" width="250" height="250">
           {% endif %}
         </div>
         <p class="unfurl__description">{{ info.description }}</p>

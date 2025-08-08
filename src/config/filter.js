@@ -67,13 +67,13 @@ export default {
         iframe: null,
         video: null
       })
-    
+
     console.log('[SEO]', 'Metadata fetched for', url, ":", !!response)
-    
+
     if (response != null) {
       result = response
     }
-    
+
     return result
   },
   isUrlOk: async url => {
@@ -83,5 +83,6 @@ export default {
     } catch (error) {
       return false
     }
-  }
+  },
+  randomInt: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
 }
