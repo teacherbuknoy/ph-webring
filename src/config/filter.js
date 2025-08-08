@@ -84,5 +84,7 @@ export default {
       return false
     }
   },
-  randomInt: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
+  randomInt: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+  year: () => new Date().getFullYear(),
+  toDate: (str) => new Date(str)
 }
