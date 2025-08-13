@@ -1,4 +1,4 @@
-# Pinoy Bloggers
+# Pinoy Websites
 A webring of Filipino people with blogs.
 
 Inspired by [Tatiana Mac's tweet](https://twitter.com/TatianaTMac/status/1114388079630929926) and [this post from Max Boeck](https://mxb.dev/blog/webring-kit/)

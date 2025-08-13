@@ -165,12 +165,30 @@
   },
   {
     "title": "jb's website",
-    "url": "https://jbcarreon123.nekoweb.org",
+    "url": "https://jbc.lol/",
     "feeds": [
       {
         "name": "Everything",
-        "url": "https://jbcarreon123.nekoweb.org/feed.xml"
+        "url": "https://jbc.lol/feed.xml"
       }
     ]
+  },
+  {
+    "title": "stupied",
+    "url": "https://stupied.neocities.org/",
+    "feeds":[
+      {
+        "name": "Stupied RSS Feed!!",
+        "url": "https://stupied.neocities.org/feed.xml"
+      }
+    ]
+  },
+  {
+    "title": "KatrickTheKirbyFan",
+    "url": "https://katrickthekirbyfan.nekoweb.org/"
+  },
+  {
+    "title": "kiaroou",
+    "url": "https://kiaroou.neocities.org/"
   }
 ]

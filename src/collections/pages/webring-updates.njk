@@ -1,0 +1,30 @@
+---
+permalink: /ph-webring-updates.xml
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link rel="self" href="https://{{ site.baseUrl }}/ph-webring-updates.xml" type="application/atom+xml" />
+  <id>https://{{ site.baseUrl }}/</id>
+  <title>Pinoy Websites - Web Ring Members</title>
+  <updated>{{ generated | toDate | dateToRfc3339 }}</updated>
+  <author>
+    <name>Pinoy Websites</name>
+  </author>
+  <icon>/assets/images/webring-icon.png</icon>
+  
+  {% for member in members %}
+    {% set memberSeo = member.url | seo %}
+    {% set info = memberSeo.data %}
+    <entry>
+      <id>{{ member.url }}</id>
+      <title type="html">{{ member.title }}</title>
+      
+      {% if info.description %}
+        <summary type="html">{{ info.description }}</summary>
+      {% endif %}
+
+      <link title="Website" href="{{ member.url }}" rel="alternate" />
+    </entry>
+  {% endfor %}
+</feed>

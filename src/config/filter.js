@@ -40,6 +40,51 @@ export default {
     endpoint.searchParams.append('video', true)
     endpoint.searchParams.append('iframe', true)
 
-    return await fetch(endpoint.toString(), { duration: '1d', type: 'json' })
-  }
+    let result = null
+
+    const response = await fetch(endpoint.toString(), {
+      duration: '1d',
+      type: 'json',
+      signal: AbortSignal.timeout(10 * 1000)
+    })
+      .catch(e => result = {
+        date: new Date(),
+        url,
+        description: '',
+        audio: null,
+        logo: {
+          url: '',
+          type: null,
+          size: 0,
+          height: 0,
+          width: 0,
+          size_pretty: 'O B',
+          palette: null,
+          backgroundColor: 'transparent',
+          color: 'currentColor',
+          alternative_color: null
+        },
+        iframe: null,
+        video: null
+      })
+
+    console.log('[SEO]', 'Metadata fetched for', url, ":", !!response)
+
+    if (response != null) {
+      result = response
+    }
+
+    return result
+  },
+  isUrlOk: async url => {
+    try {
+      const response = await fetch(url, { fetchOptions: { method: 'HEAD' }, duration: '1h', type: 'text' })
+      return !(response.status >= 200 && response.status < 300)
+    } catch (error) {
+      return false
+    }
+  },
+  randomInt: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+  year: () => new Date().getFullYear(),
+  toDate: (str) => new Date(str)
 }
