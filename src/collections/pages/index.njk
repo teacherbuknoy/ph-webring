@@ -22,7 +22,7 @@ eleventyComputed:
   <div class="section container-s margin-inline-auto margin-block-end-xxxl">
     <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} members)</small>
     </h2>
-    {% for member in members %}
+    {% asyncAll member in members %}
       {% set memberSeo = member.url | seo %}
       {% set info = memberSeo.data %}
       <article class="unfurl">
@@ -45,7 +45,7 @@ eleventyComputed:
           <span class="unfurl__publisher">{{ info.publisher }}</span>
         </small>
       </article>
-    {% endfor %}
+    {% endall %}
 
     <div class="margin-block-xxl" style="display: flex; flex-wrap: wrap; gap: 1ch;">
       <a href="/feeds.xml" class="primary button">
