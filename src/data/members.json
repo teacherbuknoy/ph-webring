@@ -194,5 +194,15 @@
   {
     "title": "Hananezumi HQ",
     "url": "https://hananezumi.neocities.org"
+  },
+  {
+    "title": "Slashdiv",
+    "url": "https://slashdiv.neocities.org/",
+    "feeds":[
+      {
+        "name": "error504's status cafe",
+        "url": "https://status.cafe/users/error504.atom"
+      }
+    ]
   }
 ]
