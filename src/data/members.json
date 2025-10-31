@@ -204,5 +204,15 @@
         "url": "https://status.cafe/users/error504.atom"
       }
     ]
+  },
+  {
+    "title": "Dartegnian.com",
+    "url": "https://dartegnian.com/",
+    "feeds":[
+      {
+        "name": "A Meaningful Struggle - Dartegnian's Blog",
+        "url": "https://blog.dartegnian.com/rss/"
+      }
+    ]
   }
 ]
