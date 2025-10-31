@@ -83,7 +83,7 @@ eleventyComputed:
   <p>Please note that sites on this webring <em>without</em> the webring links below are subject to removal. Removing these links from your site will break the ring, causing people to not get to other sites in the ring. If the administrator traverses the ring and notice that the links have been removed, your site will be removed from the ring.</p>
 
   <h2 class="fsv-4 text-rose-3" id="join-pinoy-bloggers">How to join</h2>
-  <details class="reveal">
+  <details class="reveal" id="github-instructions">
     <summary class="reveal__trigger">Devs, look here!</summary>
     <div class="reveal__body">
       {% include "ui/instructions-dev.njk" %}
@@ -118,8 +118,34 @@ eleventyComputed:
       {% endset %}
       {{ renderStr | markdown | safe }}
       {% highlight "html" %}{% include "docs/theme-example.njk" %}{% endhighlight %}
-      {% include "docs/theme.njk" %}
+      
+      <details class="reveal">
+        <summary class="reveal__trigger">Themes</summary>
+        <div class="reveal__body">
+          {% include "docs/theme.njk" %}
+        </div>
+      </details>
     </div>
+
+    <h2 class="fsv-4 text-rose-3">Frequently Asked Questions</h2>
+
+    <details class="reveal small" name="faq">
+      <summary class="reveal__trigger">My site used to be included in this ring, but now it's not. What happened?</summary>
+      <div class="reveal__body">
+        <p>It could be for the following reasons:</p>
+        <ul>
+          <li>The webring's links are not included in your website</li>
+          <li>Your website features <abbr title="Not safe for work">NSFW</abbr> content.</li>
+          <li>Your website features homophobic, transphobic, racist, sexist, and/or bigoted content.</li>
+        </ul>
+      </div>
+    </details>
+    <details class="reveal small" name="faq">
+      <summary class="reveal__trigger">My site got removed from the web ring. Can I join again?</summary>
+      <div class="reveal__body">
+        <p>Yes! Just submit your website again through the <a href="#join-form">join form</a> or <a href="#github-instructions">send a pull request</a> on the web ring's Github repository.</p>
+      </div>
+    </details>
 
     <h2 class="fsv-4 text-rose-3">Create your own webring!</h2>
     <p>If you want to start your own webring, fork <a href="{{ site.repository }}">this project</a> on Github and follow the instructions in the README.</p>
