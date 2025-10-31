@@ -14,8 +14,9 @@ async function unfurlMemberData() {
 
       return {
         ...member,
-        favicon: metadata?.favicons?.[0] || '',
-  return webring
+        favicon: getFavicon(metadata),
+        description: getDescription(metadata),
+        image: getImage(metadata)
       }
     })
   )
@@ -38,6 +39,26 @@ function getDescription(metadata) {
     : metadata['og:description']?.length > 1
       ? metadata['og:description']
       : metadata['twitter:description']
+}
+
+function getFavicon(metadata) {
+  // get favicon from metadata
+  const favicon = metadata?.favicons?.[0]?.href
+
+  // check if favicon is a full URL or a relative path
+  // if relative, prepend `url` property from metadata
+  if (favicon && !favicon.startsWith('http')) {
+    const baseUrl = metadata?.url
+    if (baseUrl) {
+      try {
+        const url = new URL(favicon, baseUrl)
+        return url.href
+      } catch (error) {
+        return null
+      }
+    }
+  }
+  return favicon
 }
 
 const webring = await unfurlMemberData();
