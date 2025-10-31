@@ -22,27 +22,26 @@ eleventyComputed:
   <div class="section container-s margin-inline-auto margin-block-end-xxxl">
     <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} members)</small>
     </h2>
-    {% asyncAll member in members %}
-      {% set memberSeo = member.url | seo %}
-      {% set info = memberSeo.data %}
+    {% asyncAll member in webring %}
       <article class="unfurl">
         <h4 class="unfurl__heading">
           <a class="unfurl__link" href="{{ member.url }}">{{ member.title | safe }}</a>
         </h4>
         <div class="unfurl__image">
-          {% if info.image.url.length > 0 %}
-            <img class="{{ 'pixelated' if info.image.width < 50 }}" src="{{ info.image.url }}" alt="" width="{{ info.image.width }}" height="{{ info.image.height }}">
+          {% set imgOk = member.image | isUrlOk %}
+          {% if member.image.length > 0 and imgOk %}
+            <img class="{{ 'pixelated' if info.image.width < 50 }}" src="{{ member.image }}" alt="">
           {% else %}
             <img src="/assets/images/gradients/{{ 1 | randomInt(9) }}.png" alt="" width="250" height="250">
           {% endif %}
         </div>
-        <p class="unfurl__description">{{ info.description }}</p>
+        <p class="unfurl__description">{{ member.description }}</p>
         <small class="unfurl__meta">
-          {% set urlOk = info.logo.url | isUrlOk %}
-          {% if info.logo.url.length > 0 and urlOk %}
-            <img class="unfurl__logo" src="{{ info.logo.url }}" alt="" width="{{ info.logo.width }}" height="{{ info.logo.height }}" onerror="handleBrokenImage(this)">
+          {% set urlOk = member.favicon | isUrlOk %}
+          {% if member.favicon.length > 0 %}
+            <img class="unfurl__logo" src="{{ member.favicon }}" alt="" width="32" height="32" onerror="handleBrokenImage(this)">
           {% endif %}
-          <span class="unfurl__publisher">{{ info.publisher }}</span>
+          <span class="unfurl__publisher">{{ member.publisher }}</span>
         </small>
       </article>
     {% endall %}

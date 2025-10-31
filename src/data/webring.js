@@ -16,13 +16,25 @@ async function unfurlMemberData() {
         ...member,
         favicon: getFavicon(metadata),
         description: getDescription(metadata),
-        image: getImage(metadata)
+        image: getUrl(getImage(metadata), metadata),
+        publisher: getPublisher(metadata)
       }
     })
   )
 
   console.log(webring)
   return webring
+}
+
+function getPublisher(metadata) {
+  return new URL(metadata.url).hostname.replace('www.', '')
+  return metadata?.author?.length > 1
+    ? metadata?.author
+    : metadata['og:site_name']?.length > 1
+      ? metadata['og:site_name']
+      : metadata['twitter:site']?.length > 1
+        ? metadata['twitter:site']
+        : new URL(metadata.url).hostname.replace('www.', '')
 }
 
 function getImage(metadata) {
@@ -59,6 +71,22 @@ function getFavicon(metadata) {
     }
   }
   return favicon
+}
+
+function getUrl(path, metadata) {
+  if (path && !path.startsWith('http')) {
+    const baseUrl = metadata?.url
+    if (baseUrl) {
+      try {
+        const url = new URL(path, baseUrl)
+        return url.href
+      } catch (error) {
+        return null
+      }
+    }
+  }
+
+  return path
 }
 
 const webring = await unfurlMemberData();
