@@ -22,11 +22,13 @@ eleventyComputed:
   <div class="section container-s margin-inline-auto margin-block-end-xxxl">
     <h2 class="fsv-4 text-rose-3">Members <small class="fsv-7">({{ members | length }} members)</small>
     </h2>
-    {% asyncAll member in webring %}
+    <div class="webring-members">
+      {% asyncAll member in webring %}
       <article class="unfurl">
         <h4 class="unfurl__heading">
           <a class="unfurl__link" href="{{ member.url }}">{{ member.title | safe }}</a>
         </h4>
+        <p class="unfurl__description">{{ member.description }}</p>
         <div class="unfurl__image">
           {% set imgOk = member.image | isUrlOk %}
           {% if member.image.length > 0 and imgOk %}
@@ -35,7 +37,6 @@ eleventyComputed:
             <img src="/assets/images/gradients/{{ 1 | randomInt(9) }}.png" alt="" width="250" height="250">
           {% endif %}
         </div>
-        <p class="unfurl__description">{{ member.description }}</p>
         <small class="unfurl__meta">
           {% set urlOk = member.favicon | isUrlOk %}
           {% if member.favicon.length > 0 %}
@@ -44,7 +45,8 @@ eleventyComputed:
           <span class="unfurl__publisher">{{ member.publisher }}</span>
         </small>
       </article>
-    {% endall %}
+      {% endall %}
+    </div>
 
     <div class="margin-block-xxl" style="display: flex; flex-wrap: wrap; gap: 1ch;">
       <a href="/feeds.xml" class="primary button">
