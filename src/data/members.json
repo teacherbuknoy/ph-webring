@@ -100,14 +100,6 @@
     ]
   },
   {
-    "title": "ITEM64",
-    "url": "https://item64.neocities.org"
-  },
-  {
-    "title": "Ryle",
-    "url": "https://carrotshot.ichi.city"
-  },
-  {
     "title": "Alexis Gaming Reviews",
     "url": "https://alexisgaming95.neocities.org",
     "feeds": [
@@ -134,26 +126,8 @@
     ]
   },
   {
-    "title": "wes/via's site",
-    "url": "https://wes-via.nekoweb.org/"
-  },
-  {
     "title": "𐍐հᨡ֟፝ؖ۬𐑾꫶ࠋꜟৎ",
     "url": "https://zharlzzz.blogspot.com"
-  },
-  {
-    "title": "Natural Stupidity’s very amazing site",
-    "url": "https://natural-stupidity.neocities.org/"
-  },
-  {
-    "title": "Jay",
-    "url": "https://jay.thedev.id",
-    "feeds": [
-      {
-        "name": "Everything",
-        "url": "https://jay.thedev.id/feed.xml"
-      }
-    ]
   },
   {
     "title": "jb's website",
@@ -194,16 +168,6 @@
       {
         "name": "error504's status cafe",
         "url": "https://status.cafe/users/error504.atom"
-      }
-    ]
-  },
-  {
-    "title": "Dartegnian.com",
-    "url": "https://dartegnian.com/",
-    "feeds":[
-      {
-        "name": "A Meaningful Struggle - Dartegnian's Blog",
-        "url": "https://blog.dartegnian.com/rss/"
       }
     ]
   }
