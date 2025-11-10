@@ -29,14 +29,14 @@ eleventyComputed:
           <a class="unfurl__link" href="{{ member.url }}">{{ member.title | safe }}</a>
         </h4>
         <p class="unfurl__description">{{ member.description }}</p>
-        <div class="unfurl__image">
+        <a href="{{ member.url }}" class="unfurl__image">
           {% set imgOk = member.image | isUrlOk %}
           {% if member.image.length > 0 and imgOk %}
             <img class="{{ 'pixelated' if info.image.width < 50 }}" src="{{ member.image }}" alt="">
           {% else %}
             <img src="/assets/images/gradients/{{ 1 | randomInt(9) }}.png" alt="" width="250" height="250">
           {% endif %}
-        </div>
+        </a>
         <small class="unfurl__meta">
           {% set urlOk = member.favicon | isUrlOk %}
           {% if member.favicon.length > 0 %}
@@ -44,6 +44,18 @@ eleventyComputed:
           {% endif %}
           <span class="unfurl__publisher">{{ member.publisher }}</span>
         </small>
+        {% if member.feeds != null and member.feeds.length > 0 %}
+          <div class="feeds">
+            <h5 class="feed__heading">RSS Feeds</h5>
+            <ul class="feeds__list">
+              {% for feed in member.feeds %}
+                <li>
+                  <a href="{{ feed.url }}">{{ feed.name }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
       </article>
       {% endall %}
     </div>
@@ -76,7 +88,10 @@ eleventyComputed:
     <li>The website you own is safe for work (no porn, gore, anything people browsing in public will be embarrassed about) <small>swearing on written media is okay :)</small>
     </li>
     <li>Your site is not homophobic, transphobic, racist, sexist, and a bigot</li>
-    <li>Your site does not feature AI slop. <small><a href="https://baccyflap.com/noai/#:~:text=There%20are%20two,takes%20all%20sorts." target="_blank">What's acceptable?</a></small></li>
+    <li>Your site does not feature AI slop. <small>
+        <a href="https://baccyflap.com/noai/#:~:text=There%20are%20two,takes%20all%20sorts." target="_blank">What's acceptable?</a>
+      </small>
+    </li>
   </ul>
 
   <p>If you satisfy these conditions, you're mostly good to join. However, we reserve the right to deny your request to join if we see that your entry is unacceptable because of other reasons not listed here.</p>
@@ -119,7 +134,7 @@ eleventyComputed:
       {% endset %}
       {{ renderStr | markdown | safe }}
       {% highlight "html" %}{% include "docs/theme-example.njk" %}{% endhighlight %}
-      
+
       <details class="reveal">
         <summary class="reveal__trigger">Themes</summary>
         <div class="reveal__body">
