@@ -1,5 +1,9 @@
 [
   {
+    "title": "TORQUATO",
+    "url": "https://torquuato.github.io/torquato/index.html"
+  },
+  {
     "title": "Francis Rubio",
     "url": "https://francisrub.io/",
     "feeds": [
@@ -142,7 +146,7 @@
   {
     "title": "stupied",
     "url": "https://stupied.neocities.org/",
-    "feeds":[
+    "feeds": [
       {
         "name": "Stupied RSS Feed!!",
         "url": "https://stupied.neocities.org/feed.xml"
@@ -164,15 +168,11 @@
   {
     "title": "Slashdiv",
     "url": "https://slashdiv.neocities.org/",
-    "feeds":[
+    "feeds": [
       {
         "name": "error504's status cafe",
         "url": "https://status.cafe/users/error504.atom"
       }
     ]
-  },
-  {
-    "title": "TORQUATO",
-    "url": "https://torquuato.github.io/torquato/index.html",
-      }
+  }
 ]
