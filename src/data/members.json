@@ -53,11 +53,11 @@
   },
   {
     "title": "tedmagaoay",
-    "url": "https://tedmagaoay.com/",
+    "url": "https://ted.magaoay.org/",
     "feeds": [
       {
-        "name": "Home on tedmagaoay",
-        "url": "https://tedmagaoay.com/index.xml"
+        "name": "Documenting things learned. Sharing some thoughts.",
+        "url": "https://ted.magaoay.org/index.xml"
       }
     ]
   },
